@@ -20,6 +20,7 @@ namespace DataStructures
         private Node? _head;
         private Node? _tail;
         private int _count;
+        public int Count => _count;
 
         public void AddFirst(T value)
         {
