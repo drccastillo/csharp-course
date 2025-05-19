@@ -1,7 +1,7 @@
 ﻿namespace DataStructures
 {
     // List
-    // TODO: Define constraints based on existing unit tests
+    // IMPLEMENTED: Define constraints based on existing unit tests
     // OPTIONAL: Enhance the logic if possible
     public class DynamicArray<T>
     {
