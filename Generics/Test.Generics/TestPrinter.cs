@@ -4,7 +4,7 @@ namespace Test.Generics
 {
     public class TestPrinter
     {
-        // TODO: Add more tests for Printer
+        // IMPLEMENTED: Add more tests for Printer
 
         [Fact]
         public void GetOrDefault_SHouldReturnDefaultIfNull()
