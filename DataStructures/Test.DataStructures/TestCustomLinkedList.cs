@@ -102,11 +102,11 @@
             list.AddLast("Sergio");
             list.AddLast("Fabricio");
 
-            // TODO: Uncomment
-            // var array = list.ToArray();
+            // IMPLEMENTED: Uncomment
+            var array = list.ToArray();
 
-            // Assert.NotNull(array);
-            // Assert.Equal(new[] { "Carlos", "Sergio", "Fabricio" }, array);
+            Assert.NotNull(array);
+            Assert.Equal(new[] { "Carlos", "Sergio", "Fabricio" }, array);
         }
     }
 }

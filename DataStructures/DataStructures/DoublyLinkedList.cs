@@ -94,25 +94,32 @@ namespace DataStructures
             return false;
         }
 
-        // TODO: Modify using _tail
+        // IMPLEMENTED: Modify using _tail
         public bool Contains(T value)
         {
-            var current = _head;
+            var left = _head;
+            var right = _tail;
 
-            while (current != null)
+            while (left != null && right != null)
             {
-                if (current.Value.Equals(value))
+                if (left.Value.Equals(value) || right.Value.Equals(value))
                 {
                     return true;
                 }
 
-                current = current.Next;
+                if (left == right || left.Next == right)
+                {
+                    break;
+                }
+
+                left = left.Next;
+                right = right.Prev;
             }
 
             return false;
         }
 
-        // TODO: Modify using _tail
+        // IMPLEMENTED: Modify using _tail
         public T Get(int index)
         {
             if (index < 0 || index >= _count)
@@ -120,30 +127,52 @@ namespace DataStructures
                 throw new ArgumentOutOfRangeException(nameof(index));
             }
 
-            var current = _head;
-
-            for (int i = 0; i < index; i++)
+            if (index < _count / 2)
             {
-                current = current!.Next;
+                var current = _head;
+                for (int i = 0; i < index; i++)
+                {
+                    current = current!.Next;
+                }
+
+                return current!.Value;
             }
 
-            return current!.Value;
+            var node = _tail!;
+            for (int i = _count - 1; i > index; i--)
+            {
+                node = node.Prev;
+            }
+
+            return node.Value;
         }
 
-        // TODO: Complete the to array method using head
+        // IMPLEMENTED: Complete the to array method using head
         public T[] ToArray()
         {
             var result = new T[_count];
-            // Turn to array the linked list
+            var current = _head;
+            int i = 0;
+            while (current != null)
+            {
+                result[i++] = current.Value;
+                current = current.Next;
+            }
 
             return result;
         }
 
-        // TODO: Complete the to reversed array using tail
+        // IMPLEMENTED: Complete the to reversed array using tail
         public T[] ToReversedArray()
         {
             var result = new T[_count];
-            // Turn to array the linked list but start from the tail
+            var current = _tail;
+            int i = 0;
+            while (current != null)
+            {
+                result[i++] = current.Value;
+                current = current.Prev;
+            }
 
             return result;
         }

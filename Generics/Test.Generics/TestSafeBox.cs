@@ -4,7 +4,13 @@ namespace Test.Generics
 {
     public class TestSafeBox
     {
-        // TODO: Add positive scenario
+        // IMPLEMENTED: Add positive scenario
+        [Fact]
+        public void SafeBox_ShouldStoreValue()
+        {
+            var box = new SafeBox<string>("hello");
+            Assert.Equal("hello", box.Value);
+        }
 
         [Fact]
         public void SafeBox_ShouldThrowIfNull()
