@@ -1,8 +1,8 @@
 namespace Test.DataStructures
 {
-    // TODO: Enhance tests
-    // TODO: Test the changing of capacity
-    // TODO: Add more testing
+    // IMPLEMENTED: Enhance tests
+    // IMPLEMENTED: Test the changing of capacity
+    // IMPLEMENTED: Add more testing
     public class TestDynamicArray
     {
         [Fact]
@@ -79,6 +79,43 @@ namespace Test.DataStructures
             dynamicArray.Add(1);
 
             Assert.Throws<ArgumentOutOfRangeException>(() => dynamicArray.RemoveAt(index));
+        }
+
+        [Fact]
+        public void RemoveAt_ShouldShiftElementsAndDecreaseCount()
+        {
+            var dynamicArray = new DynamicArray<int>();
+            dynamicArray.Add(1);
+            dynamicArray.Add(2);
+            dynamicArray.Add(3);
+
+            dynamicArray.RemoveAt(1);
+
+            Assert.Equal(2, dynamicArray.Count);
+            Assert.Equal(1, dynamicArray.Get(0));
+            Assert.Equal(3, dynamicArray.Get(1));
+        }
+
+        [Fact]
+        public void Add_WhenCapacityExceeded_ShouldDoubleCapacity()
+        {
+            var dynamicArray = new DynamicArray<int>(2);
+            Assert.Equal(2, dynamicArray.Capacity);
+
+            dynamicArray.Add(1);
+            dynamicArray.Add(2);
+            // capacity should remain same
+            Assert.Equal(2, dynamicArray.Capacity);
+
+            dynamicArray.Add(3);
+            // capacity should double to 4
+            Assert.Equal(4, dynamicArray.Capacity);
+
+            // ensure elements are correctly stored
+            Assert.Equal(3, dynamicArray.Count);
+            Assert.Equal(1, dynamicArray.Get(0));
+            Assert.Equal(2, dynamicArray.Get(1));
+            Assert.Equal(3, dynamicArray.Get(2));
         }
     }
 }
