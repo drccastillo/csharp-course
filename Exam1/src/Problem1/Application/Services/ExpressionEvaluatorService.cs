@@ -1,19 +1,32 @@
+// File: Application/Services/ExpressionEvaluatorService.cs
 using Problem1.Domain.Interfaces;
 using Problem1.Domain.Models;
 using Problem1.Domain.Exceptions;
 
 namespace Problem1.Application.Services;
 
-public class ExpressionEvaluatorService(IUndoStackRepository repository) : IExpressionEvaluatorService
+public class ExpressionEvaluatorService(
+    IUndoStackRepository repository,
+    IExpressionValidator validator) : IExpressionEvaluatorService
 {
-    public void EnterNumber(double number) => repository.Push(new NumberToken(number));
+    private static readonly Dictionary<char, int> Precedence = new()
+    {
+        ['+'] = 1,
+        ['-'] = 1,
+        ['*'] = 2,
+        ['/'] = 2
+    };
+
+    public void EnterNumber(double number)
+    {
+        validator.ValidateNumber(number);
+        repository.Push(new NumberToken(number));
+    }
 
     public void EnterOperator(char op)
     {
-        if ("+-*/".Contains(op))
-            repository.Push(new OperatorToken(op));
-        else
-            throw new ArgumentException("Invalid operator");
+        validator.ValidateOperator(op);
+        repository.Push(new OperatorToken(op));
     }
 
     public double Evaluate()
@@ -34,12 +47,15 @@ public class ExpressionEvaluatorService(IUndoStackRepository repository) : IExpr
 
                 case OperatorToken op:
                     while (operatorStack.Count > 0 &&
-                           Precedence(operatorStack.Peek().Symbol) >= Precedence(op.Symbol))
+                           Precedence[operatorStack.Peek().Symbol] >= Precedence[op.Symbol])
                     {
                         outputQueue.Enqueue(operatorStack.Pop());
                     }
                     operatorStack.Push(op);
                     break;
+
+                default:
+                    throw new InvalidExpressionException("Unrecognized token type");
             }
         }
 
@@ -68,11 +84,15 @@ public class ExpressionEvaluatorService(IUndoStackRepository repository) : IExpr
                         '+' => left + right,
                         '-' => left - right,
                         '*' => left * right,
-                        '/' => right != 0 ? left / right : throw new InvalidExpressionException("Division by zero."),
+                        '/' when right != 0 => left / right,
+                        '/' => throw new InvalidExpressionException("Division by zero."),
                         _ => throw new InvalidExpressionException($"Unknown operator '{op.Symbol}'")
                     };
                     evaluationStack.Push(result);
                     break;
+
+                default:
+                    throw new InvalidExpressionException("Unexpected token in evaluation queue");
             }
         }
 
@@ -84,11 +104,4 @@ public class ExpressionEvaluatorService(IUndoStackRepository repository) : IExpr
 
     public void Undo() => repository.Pop();
     public void Clear() => repository.Clear();
-
-    private static int Precedence(char op) => op switch
-    {
-        '+' or '-' => 1,
-        '*' or '/' => 2,
-        _ => throw new InvalidExpressionException($"Unknown operator: {op}")
-    };
-}
+} 
