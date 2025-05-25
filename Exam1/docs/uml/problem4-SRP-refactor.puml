@@ -1,0 +1,28 @@
+```plantuml
+@startuml
+class Order {
+  +string Id
+  +int Quantity
+  +decimal UnitPrice
+  +decimal Total
+}
+
+interface IOrderValidator
+interface IOrderFormatter
+interface IOrderLogger
+
+class OrderValidator implements IOrderValidator
+class OrderFormatter implements IOrderFormatter
+class OrderLogger implements IOrderLogger
+
+class OrderProcessor {
+    -IOrderValidator validator
+    -IOrderFormatter formatter
+    -IOrderLogger logger
+}
+
+OrderProcessor --> IOrderValidator
+OrderProcessor --> IOrderFormatter
+OrderProcessor --> IOrderLogger
+@enduml
+```
