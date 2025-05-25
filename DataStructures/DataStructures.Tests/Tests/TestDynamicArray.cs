@@ -1,8 +1,8 @@
-namespace Test.DataStructures
+using System.Collections.Generic;
+using System.Linq;
+
+namespace DataStructures.Tests
 {
-    // IMPLEMENTED: Enhance tests
-    // IMPLEMENTED: Test the changing of capacity
-    // IMPLEMENTED: Add more testing
     public class TestDynamicArray
     {
         [Fact]
@@ -116,6 +116,68 @@ namespace Test.DataStructures
             Assert.Equal(1, dynamicArray.Get(0));
             Assert.Equal(2, dynamicArray.Get(1));
             Assert.Equal(3, dynamicArray.Get(2));
+        }
+
+        [Fact]
+        public void Indexer_GetAndSet_ShouldWorkAsExpected()
+        {
+            var dynamicArray = new DynamicArray<string>();
+            dynamicArray.Add("A");
+            dynamicArray.Add("B");
+            dynamicArray.Add("C");
+
+            Assert.Equal("A", dynamicArray[0]);
+            Assert.Equal("B", dynamicArray[1]);
+            Assert.Equal("C", dynamicArray[2]);
+
+            dynamicArray[1] = "BB";
+            Assert.Equal("BB", dynamicArray[1]);
+        }
+
+        [Fact]
+        public void Contains_ShouldReturnTrueIfExists()
+        {
+            var dynamicArray = new DynamicArray<int>();
+            dynamicArray.Add(10);
+            dynamicArray.Add(20);
+            Assert.True(dynamicArray.Contains(20));
+            Assert.False(dynamicArray.Contains(30));
+        }
+
+        [Fact]
+        public void IndexOf_ShouldReturnCorrectIndexOrMinusOne()
+        {
+            var dynamicArray = new DynamicArray<int>();
+            dynamicArray.Add(1);
+            dynamicArray.Add(2);
+            dynamicArray.Add(3);
+            Assert.Equal(0, dynamicArray.IndexOf(1));
+            Assert.Equal(2, dynamicArray.IndexOf(3));
+            Assert.Equal(-1, dynamicArray.IndexOf(4));
+        }
+
+        [Fact]
+        public void Clear_ShouldResetArray()
+        {
+            var dynamicArray = new DynamicArray<string>();
+            dynamicArray.Add("A");
+            dynamicArray.Add("B");
+            dynamicArray.Clear();
+            Assert.Equal(0, dynamicArray.Count);
+            Assert.Throws<ArgumentOutOfRangeException>(() => dynamicArray.Get(0));
+        }
+
+        [Fact]
+        public void Enumeration_ShouldIterateThroughElements()
+        {
+            var dynamicArray = new DynamicArray<int>();
+            dynamicArray.Add(1);
+            dynamicArray.Add(2);
+            dynamicArray.Add(3);
+            var list = new List<int>();
+            foreach (var item in dynamicArray)
+                list.Add(item);
+            Assert.Equal(new[] { 1, 2, 3 }, list.ToArray());
         }
     }
 }

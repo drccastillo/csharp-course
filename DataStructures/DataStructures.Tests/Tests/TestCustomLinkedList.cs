@@ -1,4 +1,7 @@
-﻿namespace Test.DataStructures
+using System.Linq;
+using System.Collections.Generic;
+
+namespace DataStructures.Tests
 {
     public class TestCustomLinkedList
     {
@@ -102,11 +105,48 @@
             list.AddLast("Sergio");
             list.AddLast("Fabricio");
 
-            // IMPLEMENTED: Uncomment
             var array = list.ToArray();
 
             Assert.NotNull(array);
             Assert.Equal(new[] { "Carlos", "Sergio", "Fabricio" }, array);
+        }
+
+        [Fact]
+        public void Indexer_ShouldReturnElementAtIndex()
+        {
+            var list = new CustomLinkedList<int>();
+            list.AddLast(1);
+            list.AddLast(2);
+            list.AddLast(3);
+
+            Assert.Equal(1, list[0]);
+            Assert.Equal(2, list[1]);
+            Assert.Equal(3, list[2]);
+        }
+
+        [Fact]
+        public void Clear_ShouldRemoveAllElements()
+        {
+            var list = new CustomLinkedList<string>();
+            list.AddLast("A");
+            list.AddLast("B");
+
+            list.Clear();
+
+            Assert.Equal(0, list.Count);
+            Assert.Empty(list);
+        }
+
+        [Fact]
+        public void Enumeration_ShouldIterateThroughElements()
+        {
+            var list = new CustomLinkedList<string>();
+            list.AddLast("X");
+            list.AddLast("Y");
+            list.AddLast("Z");
+
+            var result = list.Select(x => x).ToArray();
+            Assert.Equal(new[] { "X", "Y", "Z" }, result);
         }
     }
 }

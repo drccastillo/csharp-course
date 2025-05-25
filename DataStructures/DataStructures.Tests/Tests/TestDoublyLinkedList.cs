@@ -1,4 +1,4 @@
-﻿namespace Test.DataStructures
+namespace DataStructures.Tests
 {
     public class TestDoublyLinkedList
     {
@@ -31,7 +31,6 @@
         [Fact]
         public void ToReversedArray_ShouldReturnCorrectReverseOrder()
         {
-            // IMPLEMENTED: Complete the test
             var list = new DoublyLinkedList<int>();
             list.AddLast(1);
             list.AddLast(2);
@@ -43,7 +42,6 @@
         [Fact]
         public void Get_ShouldReturnCorrectElement()
         {
-            // IMPLEMENTED: Complete the test
             var list = new DoublyLinkedList<char>();
             list.AddLast('A');
             list.AddLast('B');
@@ -57,7 +55,6 @@
         [Fact]
         public void Get_ShouldThrow_WhenIndexInvalid()
         {
-            // IMPLEMENTED: Complete test
             var list = new DoublyLinkedList<int>();
             list.AddLast(1);
             list.AddLast(2);
@@ -70,7 +67,6 @@
         [Fact]
         public void Contains_ShouldReturnTrueIfValueExists()
         {
-            // IMPLEMENTED: Complete test
             var list = new DoublyLinkedList<string>();
             list.AddLast("Carlos");
             list.AddLast("Sergio");
@@ -83,7 +79,6 @@
         [Fact]
         public void Remove_ShouldRemoveExistingValue()
         {
-            // IMPLEMENTED: Complete test
             var list = new DoublyLinkedList<int>();
             list.AddLast(1);
             list.AddLast(2);
@@ -98,7 +93,6 @@
         [Fact]
         public void Remove_ShouldReturnFalseIfNotFound()
         {
-            // IMPLEMENTED: Complete test
             var list = new DoublyLinkedList<int>();
             list.AddLast(1);
             list.AddLast(2);
@@ -111,6 +105,5 @@
             Assert.Equal(new[] { 1, 2, 3 }, list.ToArray());
         }
 
-        // OPTIONAL: Add more tests if wanted
     }
 }
