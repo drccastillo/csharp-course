@@ -93,7 +93,7 @@ All tests written with `xUnit` using Arrange-Act-Assert style. 100% code coverag
 
 ## Run Instructions
 ```bash
-dotnet run --project Problem2.CLI
+dotnet run --project src/Problem2/Problem2.csproj
 ```
 
 ---

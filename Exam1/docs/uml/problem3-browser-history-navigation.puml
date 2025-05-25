@@ -1,0 +1,11 @@
+```plantuml
+@startuml
+interface IBrowserService
+interface IHistoryStore
+
+class BrowserService implements IBrowserService
+class HistoryStore implements IHistoryStore
+
+BrowserService --> IHistoryStore
+@enduml
+```
