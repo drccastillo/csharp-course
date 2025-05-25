@@ -16,7 +16,6 @@
     /// </summary>
     public static class Factorial
     {
-        // TODO: Add unit testing
         public static int SolveFactorial(int n)
         {
             if (n < 0)
