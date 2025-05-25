@@ -1,4 +1,4 @@
-﻿namespace Test.DataStructures
+﻿namespace DataStructures.Tests
 {
     public class TestCustomStack
     {
@@ -29,17 +29,19 @@
             Assert.Equal(2, stack.Count);
         }
 
-        // TODO: Mejorar
-        [Fact]
-        public void Peek_ShouldReturnTopWithoutRemoving()
+        [Theory]
+        [InlineData('X')]
+        [InlineData('Y')]
+        [InlineData('Z')]
+        public void Peek_ShouldReturnTopWithoutRemoving(char last)
         {
             var stack = new CustomStack<char>();
             stack.Push('a');
-            stack.Push('b');
+            stack.Push(last);
 
             char result = stack.Peek();
 
-            Assert.Equal('b', result);
+            Assert.Equal(last, result);
             Assert.Equal(2, stack.Count);
         }
 
@@ -59,7 +61,9 @@
         [Fact]
         public void IsEmpty_StackIsEmptyOnCreation()
         {
-            // TODO: Complete test
+            var stack = new CustomStack<double>();
+
+            Assert.True(stack.IsEmpty());
         }
 
         [Fact]
@@ -73,7 +77,9 @@
         [Fact]
         public void Pop_ShouldThrow_WhenEmpty()
         {
-            // TODO: Complete test
+            var stack = new CustomStack<double>();
+
+            Assert.Throws<InvalidOperationException>(() => stack.Pop());
         }
 
         [Fact]
@@ -84,7 +90,8 @@
             stack.Push('2');
             stack.Push('3');
 
-            // Assert.Equal(new[] {'3', '2', '1'}, result);
+            var result = stack.ToArray();
+            Assert.Equal(new[] { '3', '2', '1' }, result);
         }
     }
 }

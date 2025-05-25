@@ -1,7 +1,10 @@
-﻿namespace DataStructures
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace DataStructures
 {
     // LinkedList
-    public class CustomLinkedList<T> where T : IEquatable<T>
+    public class CustomLinkedList<T>: IEnumerable<T>, IEnumerable where T : IEquatable<T>
     {
         private class Node
         {
@@ -45,7 +48,6 @@
             _count++;
         }
 
-        // OPTIONAL: Enhance
         public bool TryRemove(T value)
         {
             if (_head == null)
@@ -130,7 +132,6 @@
         public T[] ToArray()
         {
             var result = new T[_count];
-            // IMPLEMENTED: Turn to array the linked list
 
             int index = 0;
             var current = _head;
@@ -142,5 +143,34 @@
 
             return result;
         }
+        /// <summary>
+        /// Removes all nodes from the linked list.
+        /// </summary>
+        public void Clear()
+        {
+            _head = null;
+            _tail = null;
+            _count = 0;
+        }
+
+        /// <summary>
+        /// Gets the element at the specified index.
+        /// </summary>
+        public T this[int index] => Get(index);
+
+        /// <summary>
+        /// Returns an enumerator that iterates through the list.
+        /// </summary>
+        public IEnumerator<T> GetEnumerator()
+        {
+            var current = _head;
+            while (current != null)
+            {
+                yield return current.Value;
+                current = current.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
