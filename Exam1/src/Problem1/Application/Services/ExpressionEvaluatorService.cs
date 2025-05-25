@@ -1,4 +1,3 @@
-// File: Application/Services/ExpressionEvaluatorService.cs
 using Problem1.Domain.Interfaces;
 using Problem1.Domain.Models;
 using Problem1.Domain.Exceptions;
