@@ -1,27 +1,27 @@
-```mermaid
 classDiagram
-class Box~T~ {
-+Box(T item)
-+T Item { get; set; }
- }
-class SafeBox~T~ {
-+SafeBox(T item)
+
+class Box_T {
+  +Box()
+  +Item : T
 }
-class Calculator~T~ {
-+T Add(T a, T b)
-+T Subtract(T a, T b)
-+T Multiply(T a, T b)
-+T Divide(T a, T b)
+class SafeBox_T {
+  +SafeBox()
 }
-interface IRepository~T~ {
-+void Add(T item)
-+void Remove(T item)
-+T Get(int id)
+class Calculator_T {
+  +Add()
+  +Subtract()
+  +Multiply()
+  +Divide()
 }
-class Printer~T~ {
-+void Print(T item)
+class Printer_T {
+  +Print()
 }
-class Creator~T~ {
-+T Create()
+class Creator_T {
+  +Create()
 }
-```
+class IRepository_T {
+  +Add()
+  +Remove()
+  +Get()
+}
+<<interface>> IRepository_T
