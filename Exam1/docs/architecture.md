@@ -36,8 +36,11 @@ csharp-course/
 ## ✅ Problem Highlights
 
 ### 🔹 Problem 1 – Expression Evaluator with Undo
-- Used `Stack<Token>` and postfix-like evaluation
-- CLI interaction with hosted runner
+- Used:
+  - `Stack<Token>`: stores entered inputs
+  - `Queue<Token>` + `Stack<OperatorToken>`: used in **Shunting Yard Algorithm**
+  - `Stack<double>`: used to evaluate postfix expressions
+- Hosted runner
 - 100% test coverage for edge cases and invalid operations
 
 ### 🔹 Problem 2 – Print Server Load Balancer
@@ -76,7 +79,7 @@ csharp-course/
 ---
 
 ## 📌 Execution
-Use `dotnet run --project ProblemX.CLI` for Problems 1–3.  
+Use `dotnet run --project src/ProblemX/ProblemX.csproj` for Problems 1–4.  
 Problem 4 runs directly via `Program.cs`.
 
 ---
