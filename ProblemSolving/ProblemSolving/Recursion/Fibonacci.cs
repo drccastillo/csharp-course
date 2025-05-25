@@ -2,7 +2,6 @@
 {
     public static class Fibonacci
     {
-        // TODO: Add unit testing
         public static int GetFibonacci(int n)
         {
             return n switch
