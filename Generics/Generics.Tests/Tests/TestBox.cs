@@ -1,6 +1,6 @@
 using Generics;
 
-namespace Test.Generics
+namespace Generics.Tests
 {
     public class TestBox
     {

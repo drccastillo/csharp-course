@@ -1,10 +1,9 @@
 ﻿using Generics;
 
-namespace Test.Generics
+namespace Generics.Tests
 {
     public class TestCalculator
     {
-        // IMPLEMENTED: Add tests
         [Fact]
         public void Calculator_Add_ShouldReturnSum()
         {

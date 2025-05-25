@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{4CDE4634-0781-41A3-871D-8611B1849663}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Generics", "Test.Generics\Test.Generics.csproj", "{7162EDE3-7D86-492F-B1AB-1B80F5F0C5FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics.Tests", "\Generics.Tests\Generics.Tests.csproj", "{7162EDE3-7D86-492F-B1AB-1B80F5F0C5FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
