@@ -1,9 +1,10 @@
-﻿namespace DataStructures
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace DataStructures
 {
     // List
-    // IMPLEMENTED: Define constraints based on existing unit tests
-    // OPTIONAL: Enhance the logic if possible
-    public class DynamicArray<T>
+    public class DynamicArray<T> : IEnumerable<T>
     {
         private T[] _data;
         private int _count;
@@ -85,5 +86,57 @@
                 throw new ArgumentOutOfRangeException(nameof(index));
             }
         }
+
+        /// <summary>
+        /// Removes all elements from the array.
+        /// </summary>
+        public void Clear()
+        {
+            _count = 0;
+        }
+
+        /// <summary>
+        /// Determines whether the array contains a specific value.
+        /// </summary>
+        public bool Contains(T item)
+        {
+            return IndexOf(item) >= 0;
+        }
+
+        /// <summary>
+        /// Searches for the specified object and returns the zero-based index of the first occurrence.
+        /// </summary>
+        public int IndexOf(T item)
+        {
+            var comparer = EqualityComparer<T>.Default;
+            for (int i = 0; i < _count; i++)
+            {
+                if (comparer.Equals(_data[i], item))
+                    return i;
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Gets or sets the element at the specified index.
+        /// </summary>
+        public T this[int index]
+        {
+            get => Get(index);
+            set => Set(index, value);
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < _count; i++)
+            {
+                yield return _data[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

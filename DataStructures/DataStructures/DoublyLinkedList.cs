@@ -1,4 +1,3 @@
-﻿using System.Threading;
 
 namespace DataStructures
 {
@@ -95,7 +94,7 @@ namespace DataStructures
             return false;
         }
 
-        // IMPLEMENTED: Modify using _tail
+        
         public bool Contains(T value)
         {
             var left = _head;
@@ -120,7 +119,7 @@ namespace DataStructures
             return false;
         }
 
-        // IMPLEMENTED: Modify using _tail
+        
         public T Get(int index)
         {
             if (index < 0 || index >= _count)
@@ -148,7 +147,7 @@ namespace DataStructures
             return node.Value;
         }
 
-        // IMPLEMENTED: Complete the to array method using head
+        
         public T[] ToArray()
         {
             var result = new T[_count];
@@ -163,7 +162,7 @@ namespace DataStructures
             return result;
         }
 
-        // IMPLEMENTED: Complete the to reversed array using tail
+        
         public T[] ToReversedArray()
         {
             var result = new T[_count];
