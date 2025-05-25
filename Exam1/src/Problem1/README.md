@@ -25,11 +25,7 @@ Problem1/
 │   └── Exceptions/      # InvalidExpressionException
 ├── Infrastructure/      # Concrete implementations
 │   └── Repositories/    # UndoStackRepository
-├── Repl/                # REPL and Command Interfaces
-│   ├── Commands/        # input, evaluate, undo, clear
-│   ├── Core/            # ReplCommandRegistry
-│   ├── Interfaces/      # IReplCommand, IConsoleWriter
-│   └── Adapters/        # ConsoleWriter
+│   └── Validators/      # ExpressionValidator
 └── Tests/               # xUnit Tests covering 100%
 ```
 ---
@@ -43,10 +39,6 @@ Problem1/
 - ✅ Evaluate expression with correct operator precedence
 - ✅ Undo last input
 - ✅ Clear all inputs
-- ✅ Input inline expressions (e.g. `input 15 / 3 - 8 * 2`)
-- ✅ Help system (`help` command)
-- ✅ Command-based architecture for REPL extensibility
-
 ---
 
 ## 🧪 Test Coverage
@@ -55,7 +47,6 @@ All logic is fully covered with **xUnit tests**:
 - Operator precedence
 - Edge cases (division by zero, invalid expressions)
 - Undo and clear behavior
-- All REPL commands tested in isolation using `MockConsoleWriter`
 
 **Coverage: 100% for Application & Command layers** ✅
 

@@ -3,6 +3,7 @@ using Problem1.Domain.Exceptions;
 using Problem1.Domain.Interfaces;
 using Problem1.Domain.Models;
 using Problem1.Infrastructure.Repositories;
+using Problem1.Infrastructure.Validators;
 
 namespace Problem1.Tests.Application;
 
@@ -10,11 +11,13 @@ public class ExpressionEvaluatorServiceTests
 {
     private readonly IUndoStackRepository _repository;
     private readonly IExpressionEvaluatorService _service;
+    private readonly IExpressionValidator _validator;
 
     public ExpressionEvaluatorServiceTests()
     {
         _repository = new UndoStackRepository();
-        _service = new ExpressionEvaluatorService(_repository);
+        _validator = new ExpressionValidator();
+        _service = new ExpressionEvaluatorService(_repository, _validator);
     }
 
     [Fact]
@@ -35,7 +38,7 @@ public class ExpressionEvaluatorServiceTests
     [Fact]
     public void EnterOperator_InvalidOperator_ThrowsException()
     {
-        Assert.Throws<ArgumentException>(() => _service.EnterOperator('%'));
+        Assert.Throws<InvalidExpressionException>(() => _service.EnterOperator('%'));
     }
 
     [Fact]
@@ -113,10 +116,11 @@ public class ExpressionEvaluatorServiceTests
     public void Evaluate_UnknownOperator_Throws()
     {
         var repo = new UndoStackRepository();
+        var validator = new ExpressionValidator();
         repo.Push(new NumberToken(1));
         repo.Push(new OperatorToken('#'));
         repo.Push(new NumberToken(2));
-        var service = new ExpressionEvaluatorService(repo);
+        var service = new ExpressionEvaluatorService(repo, validator);
 
         Assert.Throws<InvalidExpressionException>(() => service.Evaluate());
     }
