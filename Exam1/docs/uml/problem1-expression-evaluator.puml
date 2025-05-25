@@ -1,0 +1,114 @@
+@startuml ExpressionEvaluator
+
+package "Domain.Models" {
+  abstract class Token
+  class NumberToken {
+    +double Value
+  }
+  class OperatorToken {
+    +char Symbol
+  }
+
+  Token <|-- NumberToken
+  Token <|-- OperatorToken
+}
+
+package "Domain.Interfaces" {
+  interface IUndoStackRepository {
+    +void Push(Token)
+    +Token? Pop()
+    +IReadOnlyList<Token> GetStack()
+    +void Clear()
+  }
+
+  interface IExpressionEvaluatorService {
+    +void EnterNumber(double)
+    +void EnterOperator(char)
+    +double Evaluate()
+    +void Undo()
+    +void Clear()
+  }
+}
+
+package "Domain.Exceptions" {
+  class InvalidExpressionException
+}
+
+package "Infrastructure.Repositories" {
+  class UndoStackRepository
+  IUndoStackRepository <|.. UndoStackRepository
+}
+
+package "Application.Services" {
+  class ExpressionEvaluatorService
+  IExpressionEvaluatorService <|.. ExpressionEvaluatorService
+}
+
+package "Repl.Interfaces" {
+  interface IReplCommand {
+    +string Name
+    +string Description
+    +Task ExecuteAsync(string[])
+  }
+
+  interface IConsoleWriter {
+    +void WriteLine(string)
+    +void WritePrompt(string)
+  }
+
+  interface IInputValidator {
+    +bool IsNumber(string, out double)
+    +bool IsOperator(string, out char)
+  }
+}
+
+package "Repl.Commands" {
+  class EvaluateCommand
+  class InputCommand
+  class UndoCommand
+  class ClearCommand
+
+  IReplCommand <|.. EvaluateCommand
+  IReplCommand <|.. InputCommand
+  IReplCommand <|.. UndoCommand
+  IReplCommand <|.. ClearCommand
+}
+
+package "Repl.Core" {
+  class ReplCommandRegistry {
+    +void Register(IReplCommand)
+    +bool TryResolve(string, out IReplCommand)
+  }
+}
+
+package "Repl.Adapters" {
+  class ConsoleWriter
+  IConsoleWriter <|.. ConsoleWriter
+}
+
+package "Repl" {
+  class Problem1ReplRunner
+}
+
+Problem1ReplRunner --> ReplCommandRegistry
+Problem1ReplRunner --> IConsoleWriter
+Problem1ReplRunner --> IExpressionEvaluatorService
+Problem1ReplRunner --> IInputValidator
+
+InputCommand --> IInputValidator
+InputCommand --> IExpressionEvaluatorService
+InputCommand --> IConsoleWriter
+
+EvaluateCommand --> IExpressionEvaluatorService
+EvaluateCommand --> IConsoleWriter
+
+UndoCommand --> IExpressionEvaluatorService
+UndoCommand --> IConsoleWriter
+
+ClearCommand --> IExpressionEvaluatorService
+ClearCommand --> IConsoleWriter
+
+ExpressionEvaluatorService --> IUndoStackRepository
+UndoStackRepository --> Token
+
+@enduml
