@@ -1,0 +1,16 @@
+```plantuml
+@startuml
+interface IPrintRepository
+interface IPrintBalancerService
+
+class PrintJob {
+  -string JobId
+}
+
+class PrintRepository implements IPrintRepository
+class PrintBalancerService implements IPrintBalancerService
+
+PrintBalancerService --> IPrintRepository
+IPrintRepository --> PrintJob
+@enduml
+```
