@@ -11,7 +11,7 @@
         // Use default(T) to assign the default value for a type
         public T GetOrDefault<T>(T value)
         {
-            return value == null ? default(T) : value;
+            return EqualityComparer<T>.Default.Equals(value, default) ? default : value;
         }
     }
 }

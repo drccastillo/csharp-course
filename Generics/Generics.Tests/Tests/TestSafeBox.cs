@@ -1,10 +1,9 @@
 ﻿using Generics;
 
-namespace Test.Generics
+namespace Generics.Tests
 {
     public class TestSafeBox
     {
-        // IMPLEMENTED: Add positive scenario
         [Fact]
         public void SafeBox_ShouldStoreValue()
         {
