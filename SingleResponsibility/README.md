@@ -1,90 +1,110 @@
-# Single Responsibility Principle (SRP)
+# Single Responsibility Principle (SRP) – Concept & Implementation
 
-## Definition
+## 📚 Definition
 
-A class, module, function, method should have one and only one reason to change, this means it must be responsible for one thing only.
+> A **class, module, function, or method** should have **one and only one reason to change**.  
+This means it should be responsible for **only one specific concern**.
 
-## Scenario
+---
 
-We are going to have a CLI tool (Command line interface) that will receive a list of customers invoices (JSON string) or (inline data) and prints out a report with totals & averages.
+## 🎯 Objective
 
-### Example (problem)
+This project demonstrates the **Single Responsibility Principle** by building a **CLI tool** that receives a list of customer invoices (as a JSON string) and prints a report with totals and averages.
 
-One change in any of the five concerns below will make us edit the same class and may increase the complexity of the class.
+---
+
+## ❌ Initial Problem (Monolithic Design)
+
+A single class handles multiple unrelated concerns:
 
 ```csharp
 // InvoiceProcessor.cs
-using System.Text.Json;
-using InvoiceApp.Models;
-
-namespace InvoiceApp;
-
 public class InvoiceProcessor
 {
   public void Run(string[] args)
   {
     // 1. Parse arguments
-    if (args.Length == 0)
-    {
-      throw new ArgumentException("Expecting JSON invoices!");
-    }
-
     // 2. Deserialize invoices
-    var invoices = JsonSerializer.Deserialize<List<Invoice>>(args[0])!;
-
-    // 3. Calculate totals and averages
-    var total = invoices.Sum(i => i.Amount);
-    var average = invoices.Average(i => i.Amount);
-
-    // 4. Format an ASCII table
-    var report = $"""
-      Invoices: {invoices.Count}
-      Total: {total:C}
-      Average: {average:C}
-      """;
-
-    // 5. Output to console
-    Console.WriteLine(report);
+    // 3. Calculate totals & averages
+    // 4. Format report
+    // 5. Print to console
   }
 }
 ```
 
-### Example (solution)
+⚠️ Any change in input, processing, formatting, or output would require modifying the same class — violating SRP and increasing coupling.
 
-We split the responsibilities into distinct classes, methods, entities, and wire them together with different approaches. And we are going to use Dependency Injection (DI).
+---
 
-## Project Creation
+## ✅ Final Design (SRP Applied)
 
-You can use the following commands in powershell windows.
+Responsibilities are split into separate components:
+
+| Component               | Responsibility                      |
+|------------------------|--------------------------------------|
+| `InvoiceParser`        | Parses and deserializes JSON input   |
+| `InvoiceValidator`     | Validates command-line arguments     |
+| `InvoiceCalculator`    | Computes total and average amounts   |
+| `AsciiReportFormatter` | Formats results into a printable form|
+| `InvoiceCli`           | Coordinates the execution flow       |
+
+🧩 These are wired together using **Dependency Injection** for modularity and testability.
+
+---
+
+## 🛠️ Project Setup
+
+Run the following commands in a terminal (PowerShell/Linux):
+
 ```bash
-# 1. Solution & projects
+# 1. Create solution and projects
 mkdir SingleResponsibility && cd SingleResponsibility
-
 dotnet new sln -n SingleResponsibility
-
 dotnet new console -n InvoiceApp
+dotnet new xunit -n InvoiceApp.Tests
 
-dotnet new xunit   -n InvoiceApp.Tests
-
-# 2. Add projects to the solution
-
+# 2. Link projects to the solution
 dotnet sln add InvoiceApp/InvoiceApp.csproj
-
 dotnet sln add InvoiceApp.Tests/InvoiceApp.Tests.csproj
-
-# 3. Test project references main project
-
 dotnet add InvoiceApp.Tests reference InvoiceApp
 
-# 4. Install dependencies
+# 3. Add required packages
 dotnet add InvoiceApp package Microsoft.Extensions.Hosting
 dotnet add InvoiceApp package Microsoft.Extensions.DependencyInjection
 
-# 5. Run the app (uses inline sample data)
-
+# 4. Run application
 dotnet run --project InvoiceApp
 
-# 6. Run tests
-
+# 5. Run tests
 dotnet test
 ```
+
+---
+
+## ✅ Task Classification
+
+| File                       | Comment                                          | Classification |
+|----------------------------|--------------------------------------------------|----------------|
+| `InvoiceCli.cs`            | `// TODO: Create validator, create as a service` | Required       |
+| `Program.cs`               | `// OPTIONAL: Create the diagram...`             | Optional       |
+| `TestInvoiceCalculator.cs` | `// TODO: Add negative test cases`               | Optional       |
+
+---
+
+## 🧠 Design Decisions & Patterns
+
+- **Single Responsibility Principle:** each class has one focused responsibility.
+- **Dependency Injection (DI):** enables decoupling and easier testing.
+- **Interface Segregation:** encourages clean abstraction for each responsibility.
+
+---
+
+## 📐 UML Class Diagram (Optional)
+
+You may add a Mermaid diagram at:
+
+```
+uml/diagram.mmd
+```
+
+(Use `mmdc` to render to SVG or PNG.)

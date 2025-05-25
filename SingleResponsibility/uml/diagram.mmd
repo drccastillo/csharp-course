@@ -1,0 +1,21 @@
+classDiagram
+interface IInvoiceValidator
+interface IInvoiceParser
+interface IInvoiceCalculator
+interface IReportFormatter
+class InvoiceValidator
+class InvoiceParser
+class InvoiceCalculator
+class AsciiReportFormatter
+class InvoiceCli
+class Program
+
+IInvoiceValidator <|.. InvoiceValidator
+IInvoiceParser <|.. InvoiceParser
+IInvoiceCalculator <|.. InvoiceCalculator
+IReportFormatter <|.. AsciiReportFormatter
+InvoiceCli --> IInvoiceValidator
+InvoiceCli --> IInvoiceParser
+InvoiceCli --> IInvoiceCalculator
+InvoiceCli --> IReportFormatter
+Program --> InvoiceCli
