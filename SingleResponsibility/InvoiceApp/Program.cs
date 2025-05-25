@@ -10,6 +10,7 @@ var services = builder.Services;
 services.AddSingleton<IInvoiceParser, InvoiceParser>();
 services.AddSingleton<IInvoiceCalculator, InvoiceCalculator>();
 services.AddSingleton<IReportFormatter, AsciiReportFormatter>();
+services.AddSingleton<IInvoiceValidator, InvoiceValidator>();
 services.AddSingleton<InvoiceCli>();
 
 using var host = builder.Build();
@@ -18,9 +19,7 @@ var sampleJson = "[{\"Id\":1,\"Customer\":\"John Doe\",\"Amount\":100.50,\"Date\
 
 if (args.Length == 0)
 {
-  args = [sampleJson];
+  args = new[] { sampleJson };
 }
 
 host.Services.GetRequiredService<InvoiceCli>().Run(args);
-// OPTIONAL: Create the diagram of the classes and interfaces
-//           Attach an image of the diagram to your fork at the README.md level

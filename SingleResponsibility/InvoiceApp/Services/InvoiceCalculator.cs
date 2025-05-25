@@ -7,6 +7,9 @@ public class InvoiceCalculator : IInvoiceCalculator
 {
   public (decimal total, decimal average) Calculate(IEnumerable<Invoice> invoices)
   {
+    if (invoices is null)
+        throw new ArgumentNullException(nameof(invoices));
+
     var list = invoices.ToList();
 
     if (list.Count == 0)
