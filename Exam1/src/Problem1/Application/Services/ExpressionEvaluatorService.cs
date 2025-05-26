@@ -103,4 +103,4 @@ public class ExpressionEvaluatorService(
 
     public void Undo() => repository.Pop();
     public void Clear() => repository.Clear();
-} 
+}

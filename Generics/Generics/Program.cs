@@ -47,7 +47,7 @@
     public class TestClass : IConfigurable
     {
         public TestClass() { }
-        
+
         public TestClass(int param1)
         {
         }
