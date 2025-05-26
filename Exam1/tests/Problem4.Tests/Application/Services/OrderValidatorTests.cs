@@ -32,7 +32,7 @@ public class OrderValidatorTests
         Assert.Contains(messages, msg => msg.Contains("Invalid quantity"));
         Assert.Contains(messages, msg => msg.Contains("Invalid price"));
     }
-    
+
     [Theory]
     [InlineData("A", 1, 1, true)]
     [InlineData("B", 0, 1, false)]

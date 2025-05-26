@@ -4,5 +4,5 @@ namespace InvoiceApp.Interfaces;
 
 public interface IInvoiceParser
 {
-  IEnumerable<Invoice> Parse(string json);
+    IEnumerable<Invoice> Parse(string json);
 }

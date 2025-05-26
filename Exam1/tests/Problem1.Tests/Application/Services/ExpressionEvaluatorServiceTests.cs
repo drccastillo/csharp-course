@@ -155,7 +155,7 @@ public class ExpressionEvaluatorServiceTests
     {
         var repo = new UndoStackRepository();
         var validator = new ExpressionValidator();
-        
+
         repo.Push(new NumberToken(1));
         repo.Push(new NumberToken(2));
         repo.Push(new OperatorToken('+'));
