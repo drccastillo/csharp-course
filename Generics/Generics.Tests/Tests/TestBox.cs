@@ -33,5 +33,20 @@ namespace Generics.Tests
             var box = new Box<bool>();
             Assert.False(box.Value);
         }
+
+        [Fact]
+        public void Box_ShouldStoreAndRetrieveReferenceType()
+        {
+            var obj = new object();
+            var box = new Box<object> { Value = obj };
+            Assert.Same(obj, box.Value);
+        }
+
+        [Fact]
+        public void Box_ShouldAllowNullForReferenceType()
+        {
+            var box = new Box<object> { Value = null };
+            Assert.Null(box.Value);
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace InvoiceApp.Services;
 
 public class InvoiceValidator : IInvoiceValidator
 {
-    public void Validate(string[] args)
+    public void Validate(string[]? args)
     {
         if (args == null || args.Length == 0 || string.IsNullOrWhiteSpace(args[0]))
         {

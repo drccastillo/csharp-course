@@ -32,4 +32,35 @@ public class OrderValidatorTests
         Assert.Contains(messages, msg => msg.Contains("Invalid quantity"));
         Assert.Contains(messages, msg => msg.Contains("Invalid price"));
     }
+    
+    [Theory]
+    [InlineData("A", 1, 1, true)]
+    [InlineData("B", 0, 1, false)]
+    [InlineData("C", 1, 0, false)]
+    [InlineData("D", 0, 0, false)]
+    public void IsValid_CoversAllBranches(string id, int qty, decimal price, bool expected)
+    {
+        var validator = new OrderValidator();
+        var order = new Order(id, qty, price);
+        Assert.Equal(expected, validator.IsValid(order));
+    }
+
+    [Fact]
+    public void GetValidationMessages_ReturnsAllMessages()
+    {
+        var validator = new OrderValidator();
+        var order = new Order("E", 0, 0);
+        var messages = validator.GetValidationMessages(order);
+        Assert.Contains(messages, m => m.Contains("Invalid quantity"));
+        Assert.Contains(messages, m => m.Contains("Invalid price"));
+    }
+
+    [Fact]
+    public void GetValidationMessages_ValidOrder_ReturnsEmpty()
+    {
+        var validator = new OrderValidator();
+        var order = new Order("F", 1, 1);
+        var messages = validator.GetValidationMessages(order);
+        Assert.Empty(messages);
+    }
 }

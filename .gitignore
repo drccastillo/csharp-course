@@ -9,11 +9,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 .idea
 .env
-clean_folders.sh
-cc.txt
-CHANGELOG.md
-IMPLEMENTATION_SUMMARY.md
-
+coverage-report
+Exam1/tests/coverage-report
 # User-specific files
 *.rsuser
 *.suo
