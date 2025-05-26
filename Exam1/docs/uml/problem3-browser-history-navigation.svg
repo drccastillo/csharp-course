@@ -1,70 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" contentScriptType="application/ecmascript" contentStyleType="text/css"
-     height="391px" preserveAspectRatio="none" style="width:148px;height:391px;" version="1.1" viewBox="0 0 148 391"
-     width="148px" zoomAndPan="magnify">
-    <defs>
-        <filter height="300%" id="fjse0k0glug6k" width="300%" x="-1" y="-1">
-            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
-            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
-                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
-            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
-            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
-        </filter>
-    </defs>
-    <g><!--MD5=[3ef31311d4105c63802a54c15240df80]
-class IBrowserService-->
-        <rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="IBrowserService"
-              style="stroke: #A80036; stroke-width: 1.5;" width="131" x="6" y="8"/>
-        <ellipse cx="21" cy="24" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <path d="M16.9219,19.7656 L16.9219,17.6094 L24.3125,17.6094 L24.3125,19.7656 L21.8438,19.7656 L21.8438,27.8438 L24.3125,27.8438 L24.3125,30 L16.9219,30 L16.9219,27.8438 L19.3906,27.8438 L19.3906,19.7656 L16.9219,19.7656 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs"
-              textLength="99" x="35" y="28.1543">IBrowserService
-        </text>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="136" y1="40" y2="40"/>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="136" y1="48" y2="48"/><!--MD5=[15bc3bc1a350b6fa6ea94969b336a03b]
-class IHistoryStore-->
-        <rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="IHistoryStore"
-              style="stroke: #A80036; stroke-width: 1.5;" width="113" x="15" y="224"/>
-        <ellipse cx="30" cy="240" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <path d="M25.9219,235.7656 L25.9219,233.6094 L33.3125,233.6094 L33.3125,235.7656 L30.8438,235.7656 L30.8438,243.8438 L33.3125,243.8438 L33.3125,246 L25.9219,246 L25.9219,243.8438 L28.3906,243.8438 L28.3906,235.7656 L25.9219,235.7656 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs"
-              textLength="81" x="44" y="244.1543">IHistoryStore
-        </text>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="127" y1="256" y2="256"/>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="127" y1="264" y2="264"/><!--MD5=[073c28588fac3ecffaad09327ce0ac06]
-class BrowserService-->
-        <rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="BrowserService"
-              style="stroke: #A80036; stroke-width: 1.5;" width="127" x="8" y="116"/>
-        <ellipse cx="23" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <path d="M25.9688,137.6406 Q25.3906,137.9375 24.75,138.0781 Q24.1094,138.2344 23.4063,138.2344 Q20.9063,138.2344 19.5781,136.5938 Q18.2656,134.9375 18.2656,131.8125 Q18.2656,128.6875 19.5781,127.0313 Q20.9063,125.375 23.4063,125.375 Q24.1094,125.375 24.75,125.5313 Q25.4063,125.6875 25.9688,125.9844 L25.9688,128.7031 Q25.3438,128.125 24.75,127.8594 Q24.1563,127.5781 23.5313,127.5781 Q22.1875,127.5781 21.5,128.6563 Q20.8125,129.7188 20.8125,131.8125 Q20.8125,133.9063 21.5,134.9844 Q22.1875,136.0469 23.5313,136.0469 Q24.1563,136.0469 24.75,135.7813 Q25.3438,135.5 25.9688,134.9219 L25.9688,137.6406 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95"
-              x="37" y="136.1543">BrowserService
-        </text>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="9" x2="134" y1="148" y2="148"/>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="9" x2="134" y1="156" y2="156"/><!--MD5=[1790e3fa091ed123f75a521de2356138]
-class HistoryStore-->
-        <rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="HistoryStore"
-              style="stroke: #A80036; stroke-width: 1.5;" width="109" x="17" y="332"/>
-        <ellipse cx="32" cy="348" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
-        <path d="M34.9688,353.6406 Q34.3906,353.9375 33.75,354.0781 Q33.1094,354.2344 32.4063,354.2344 Q29.9063,354.2344 28.5781,352.5938 Q27.2656,350.9375 27.2656,347.8125 Q27.2656,344.6875 28.5781,343.0313 Q29.9063,341.375 32.4063,341.375 Q33.1094,341.375 33.75,341.5313 Q34.4063,341.6875 34.9688,341.9844 L34.9688,344.7031 Q34.3438,344.125 33.75,343.8594 Q33.1563,343.5781 32.5313,343.5781 Q31.1875,343.5781 30.5,344.6563 Q29.8125,345.7188 29.8125,347.8125 Q29.8125,349.9063 30.5,350.9844 Q31.1875,352.0469 32.5313,352.0469 Q33.1563,352.0469 33.75,351.7813 Q34.3438,351.5 34.9688,350.9219 L34.9688,353.6406 Z "/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77"
-              x="46" y="352.1543">HistoryStore
-        </text>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="18" x2="125" y1="364" y2="364"/>
-        <line style="stroke: #A80036; stroke-width: 1.5;" x1="18" x2="125" y1="372" y2="372"/><!--MD5=[6f2da41d03f55121b72986d257f1b8d0]
-reverse link IBrowserService to BrowserService-->
-        <path d="M71.5,76.02 C71.5,89.58 71.5,104.04 71.5,115.68 " fill="none" id="IBrowserService&lt;-BrowserService"
-              style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
-        <polygon fill="none" points="64.5,76,71.5,56,78.5,76,64.5,76" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b5cbc230e511721eafbfe91017df25bd]
-reverse link IHistoryStore to HistoryStore-->
-        <path d="M71.5,292.02 C71.5,305.58 71.5,320.04 71.5,331.68 " fill="none" id="IHistoryStore&lt;-HistoryStore"
-              style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
-        <polygon fill="none" points="64.5,292,71.5,272,78.5,292,64.5,292" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[13bd52016af0744025eebb16c2125122]
-link BrowserService to IHistoryStore-->
-        <path d="M71.5,164 C71.5,180 71.5,201.45 71.5,218.53 " fill="none" id="BrowserService-&gt;IHistoryStore"
-              style="stroke: #A80036; stroke-width: 1.0;"/>
-        <polygon fill="#A80036" points="71.5,223.68,75.5,214.68,71.5,218.68,67.5,214.68,71.5,223.68"
-                 style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[be292acd98683364760cb5ab550ecba4]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="391px" preserveAspectRatio="none" style="width:148px;height:391px;" version="1.1" viewBox="0 0 148 391" width="148px" zoomAndPan="magnify"><defs><filter height="300%" id="fjse0k0glug6k" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3ef31311d4105c63802a54c15240df80]
+class IBrowserService--><rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="IBrowserService" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="6" y="8"/><ellipse cx="21" cy="24" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M16.9219,19.7656 L16.9219,17.6094 L24.3125,17.6094 L24.3125,19.7656 L21.8438,19.7656 L21.8438,27.8438 L24.3125,27.8438 L24.3125,30 L16.9219,30 L16.9219,27.8438 L19.3906,27.8438 L19.3906,19.7656 L16.9219,19.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="99" x="35" y="28.1543">IBrowserService</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="136" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="136" y1="48" y2="48"/><!--MD5=[15bc3bc1a350b6fa6ea94969b336a03b]
+class IHistoryStore--><rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="IHistoryStore" style="stroke: #A80036; stroke-width: 1.5;" width="113" x="15" y="224"/><ellipse cx="30" cy="240" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M25.9219,235.7656 L25.9219,233.6094 L33.3125,233.6094 L33.3125,235.7656 L30.8438,235.7656 L30.8438,243.8438 L33.3125,243.8438 L33.3125,246 L25.9219,246 L25.9219,243.8438 L28.3906,243.8438 L28.3906,235.7656 L25.9219,235.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="81" x="44" y="244.1543">IHistoryStore</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="127" y1="256" y2="256"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="127" y1="264" y2="264"/><!--MD5=[073c28588fac3ecffaad09327ce0ac06]
+class BrowserService--><rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="BrowserService" style="stroke: #A80036; stroke-width: 1.5;" width="127" x="8" y="116"/><ellipse cx="23" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M25.9688,137.6406 Q25.3906,137.9375 24.75,138.0781 Q24.1094,138.2344 23.4063,138.2344 Q20.9063,138.2344 19.5781,136.5938 Q18.2656,134.9375 18.2656,131.8125 Q18.2656,128.6875 19.5781,127.0313 Q20.9063,125.375 23.4063,125.375 Q24.1094,125.375 24.75,125.5313 Q25.4063,125.6875 25.9688,125.9844 L25.9688,128.7031 Q25.3438,128.125 24.75,127.8594 Q24.1563,127.5781 23.5313,127.5781 Q22.1875,127.5781 21.5,128.6563 Q20.8125,129.7188 20.8125,131.8125 Q20.8125,133.9063 21.5,134.9844 Q22.1875,136.0469 23.5313,136.0469 Q24.1563,136.0469 24.75,135.7813 Q25.3438,135.5 25.9688,134.9219 L25.9688,137.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="37" y="136.1543">BrowserService</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="9" x2="134" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="9" x2="134" y1="156" y2="156"/><!--MD5=[1790e3fa091ed123f75a521de2356138]
+class HistoryStore--><rect fill="#FEFECE" filter="url(#fjse0k0glug6k)" height="48" id="HistoryStore" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="17" y="332"/><ellipse cx="32" cy="348" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M34.9688,353.6406 Q34.3906,353.9375 33.75,354.0781 Q33.1094,354.2344 32.4063,354.2344 Q29.9063,354.2344 28.5781,352.5938 Q27.2656,350.9375 27.2656,347.8125 Q27.2656,344.6875 28.5781,343.0313 Q29.9063,341.375 32.4063,341.375 Q33.1094,341.375 33.75,341.5313 Q34.4063,341.6875 34.9688,341.9844 L34.9688,344.7031 Q34.3438,344.125 33.75,343.8594 Q33.1563,343.5781 32.5313,343.5781 Q31.1875,343.5781 30.5,344.6563 Q29.8125,345.7188 29.8125,347.8125 Q29.8125,349.9063 30.5,350.9844 Q31.1875,352.0469 32.5313,352.0469 Q33.1563,352.0469 33.75,351.7813 Q34.3438,351.5 34.9688,350.9219 L34.9688,353.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="46" y="352.1543">HistoryStore</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="18" x2="125" y1="364" y2="364"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="18" x2="125" y1="372" y2="372"/><!--MD5=[6f2da41d03f55121b72986d257f1b8d0]
+reverse link IBrowserService to BrowserService--><path d="M71.5,76.02 C71.5,89.58 71.5,104.04 71.5,115.68 " fill="none" id="IBrowserService&lt;-BrowserService" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="64.5,76,71.5,56,78.5,76,64.5,76" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b5cbc230e511721eafbfe91017df25bd]
+reverse link IHistoryStore to HistoryStore--><path d="M71.5,292.02 C71.5,305.58 71.5,320.04 71.5,331.68 " fill="none" id="IHistoryStore&lt;-HistoryStore" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="64.5,292,71.5,272,78.5,292,64.5,292" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[13bd52016af0744025eebb16c2125122]
+link BrowserService to IHistoryStore--><path d="M71.5,164 C71.5,180 71.5,201.45 71.5,218.53 " fill="none" id="BrowserService-&gt;IHistoryStore" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="71.5,223.68,75.5,214.68,71.5,218.68,67.5,214.68,71.5,223.68" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[aa0afd4fff854b7630c2f98c71d27b66]
 @startuml
 interface IBrowserService
 interface IHistoryStore
@@ -75,15 +16,13 @@ class HistoryStore implements IHistoryStore
 BrowserService - -> IHistoryStore
 @enduml
 
-PlantUML version 1.2020.02(Sun Mar 01 06:22:07 AMT 2020)
+PlantUML version 1.2020.02(Sun Mar 01 06:22:07 BOT 2020)
 (GPL source distribution)
 Java Runtime: OpenJDK Runtime Environment
 JVM: OpenJDK 64-Bit Server VM
-Java Version: 21.0.7+6-LTS
+Java Version: 21.0.7+6-Ubuntu-0ubuntu124.04
 Operating System: Linux
 Default Encoding: UTF-8
 Language: en
 Country: null
--->
-    </g>
-</svg>
+--></g></svg>

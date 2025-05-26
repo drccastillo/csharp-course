@@ -1,4 +1,5 @@
 @startuml
+title Generics - Class Diagram
 class Box<T> {
   +Box()
   +Item: T
