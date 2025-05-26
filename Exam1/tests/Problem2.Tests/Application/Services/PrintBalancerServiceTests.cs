@@ -61,4 +61,32 @@ public class PrintBalancerServiceTests
 
         Assert.Single(_repo.WaitingJobs);
     }
+
+    [Fact]
+    public void CompleteJob_WrongPrinterOrJob_DoesNothing()
+    {
+        _service.EnqueueJob("Job1");
+        _service.AssignNext();
+
+        _service.CompleteJob("PrinterX", "Job1");
+        Assert.NotNull(_repo.Printers["Printer1"]);
+
+        _service.CompleteJob("Printer1", "OtherJob");
+        Assert.NotNull(_repo.Printers["Printer1"]);
+    }
+
+    [Fact]
+    public void AssignNext_WithNoJobs_DoesNothing()
+    {
+        _service.AssignNext(); // Should not throw or assign
+        Assert.All(_repo.Printers.Values, v => Assert.Null(v));
+    }
+
+    [Fact]
+    public void Status_EmptyRepo_ReportsIdle()
+    {
+        string status = _service.Status();
+        Assert.Contains("idle", status);
+        Assert.Contains("Waiting Jobs", status);
+    }
 }
