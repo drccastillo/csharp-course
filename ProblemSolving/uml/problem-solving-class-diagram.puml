@@ -1,4 +1,5 @@
 @startuml
+title ProblemSolving - Class Diagram
 class Factorial {
   +static int SolveFactorial(int n)
 }

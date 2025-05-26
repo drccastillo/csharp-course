@@ -1,22 +1,67 @@
 @startuml
-interface IInvoiceValidator
-interface IInvoiceParser
-interface IInvoiceCalculator
-interface IReportFormatter
-class InvoiceValidator
-class InvoiceParser
-class InvoiceCalculator
-class AsciiReportFormatter
-class InvoiceCli
+title InvoiceApp - Class Diagram
+
+' Interfaces with methods
+interface IInvoiceValidator {
+    +Validate(args: string[]): void
+}
+interface IInvoiceParser {
+    +Parse(json: string): IEnumerable<Invoice>
+}
+interface IInvoiceCalculator {
+    +Calculate(invoices: IEnumerable<Invoice>): (decimal, decimal)
+}
+interface IReportFormatter {
+    +Format(invoices: IEnumerable<Invoice>, total: decimal, average: decimal): string
+}
+
+' Model
+class Invoice {
+    +Id: int
+    +Customer: string
+    +Amount: decimal
+    +Date: DateOnly
+}
+
+' Services
+class InvoiceValidator {
+    +Validate(args: string[]): void
+}
+class InvoiceParser {
+    +Parse(json: string): IEnumerable<Invoice>
+}
+class InvoiceCalculator {
+    +Calculate(invoices: IEnumerable<Invoice>): (decimal, decimal)
+}
+class AsciiReportFormatter {
+    +Format(invoices: IEnumerable<Invoice>, total: decimal, average: decimal): string
+}
+
+' CLI and Program
+class InvoiceCli {
+    +Run(args: string[]): void
+    -_invoiceParser: IInvoiceParser
+    -_invoiceCalculator: IInvoiceCalculator
+    -_reportFormatter: IReportFormatter
+    -_invoiceValidator: IInvoiceValidator
+}
 class Program
 
+' Relationships
 IInvoiceValidator <|.. InvoiceValidator
 IInvoiceParser <|.. InvoiceParser
 IInvoiceCalculator <|.. InvoiceCalculator
 IReportFormatter <|.. AsciiReportFormatter
-InvoiceCli --> IInvoiceValidator
-InvoiceCli --> IInvoiceParser
-InvoiceCli --> IInvoiceCalculator
-InvoiceCli --> IReportFormatter
-Program --> InvoiceCli
+
+InvoiceCli --> IInvoiceValidator : uses
+InvoiceCli --> IInvoiceParser : uses
+InvoiceCli --> IInvoiceCalculator : uses
+InvoiceCli --> IReportFormatter : uses
+Program --> InvoiceCli : creates
+
+' Model usage
+InvoiceParser ..> Invoice : parses
+InvoiceCalculator ..> Invoice : calculates
+AsciiReportFormatter ..> Invoice : formats
+
 @enduml
