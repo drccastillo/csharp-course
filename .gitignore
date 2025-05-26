@@ -9,8 +9,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 .idea
 .env
-coverage-report
-Exam1/tests/coverage-report
+
 # User-specific files
 *.rsuser
 *.suo
@@ -375,6 +374,20 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+
+# Global coverage report
+coverage-report
+
+# Per-project coverage reports
+Exam1/tests/coverage-report
+Exam1/src/Problem1/tests/coverage-report
+Exam1/src/Problem2/tests/coverage-report
+Exam1/src/Problem3/tests/coverage-report
+Exam1/src/Problem4/tests/coverage-report
+DataStructures/DataStructures.Tests/coverage-report
+Generics/Generics.Tests/coverage-report
+ProblemSolving/ProblemSolving.Tests/coverage-report
+SingleResponsibility/InvoiceApp.Tests/coverage-report
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
