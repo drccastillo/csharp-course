@@ -124,4 +124,43 @@ public class ExpressionEvaluatorServiceTests
 
         Assert.Throws<InvalidExpressionException>(() => service.Evaluate());
     }
+
+    private record DummyToken() : Token;
+
+    [Fact]
+    public void Evaluate_UnrecognizedTokenType_Throws()
+    {
+        var repo = new UndoStackRepository();
+        var validator = new ExpressionValidator();
+        repo.Push(new DummyToken());
+        var service = new ExpressionEvaluatorService(repo, validator);
+        Assert.Throws<InvalidExpressionException>(() => service.Evaluate());
+    }
+
+    [Fact]
+    public void Evaluate_UnexpectedTokenInEvaluationQueue_Throws()
+    {
+        var repo = new UndoStackRepository();
+        var validator = new ExpressionValidator();
+
+        repo.Push(new NumberToken(1));
+        repo.Push(new OperatorToken('+'));
+        repo.Push(new NumberToken(2));
+
+        var service = new ExpressionEvaluatorService(repo, validator);
+    }
+
+    [Fact]
+    public void Evaluate_ExtraValuesInStack_Throws()
+    {
+        var repo = new UndoStackRepository();
+        var validator = new ExpressionValidator();
+        
+        repo.Push(new NumberToken(1));
+        repo.Push(new NumberToken(2));
+        repo.Push(new OperatorToken('+'));
+        repo.Push(new NumberToken(3));
+        var service = new ExpressionEvaluatorService(repo, validator);
+        Assert.Throws<InvalidExpressionException>(() => service.Evaluate());
+    }
 }

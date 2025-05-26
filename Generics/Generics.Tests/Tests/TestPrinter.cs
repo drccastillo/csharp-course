@@ -83,6 +83,20 @@ namespace Generics.Tests
             Assert.Equal("Lucia", result.Name);
         }
 
+        [Fact]
+        public void GetOrDefault_WithNullReferenceType_ReturnsNull()
+        {
+            object result = _printer.GetOrDefault<object>(null);
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public void GetOrDefault_WithStructDefault_ReturnsDefault()
+        {
+            int result = _printer.GetOrDefault<int>(default);
+            Assert.Equal(0, result);
+        }
+
         public class Person
         {
             public string Name { get; set; }
