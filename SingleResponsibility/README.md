@@ -3,13 +3,14 @@
 ## 📚 Definition
 
 > A **class, module, function, or method** should have **one and only one reason to change**.  
-This means it should be responsible for **only one specific concern**.
+> This means it should be responsible for **only one specific concern**.
 
 ---
 
 ## 🎯 Objective
 
-This project demonstrates the **Single Responsibility Principle** by building a **CLI tool** that receives a list of customer invoices (as a JSON string) and prints a report with totals and averages.
+This project demonstrates the **Single Responsibility Principle** by building a **CLI tool** that receives a list of
+customer invoices (as a JSON string) and prints a report with totals and averages.
 
 ---
 
@@ -32,7 +33,8 @@ public class InvoiceProcessor
 }
 ```
 
-⚠️ Any change in input, processing, formatting, or output would require modifying the same class — violating SRP and increasing coupling.
+⚠️ Any change in input, processing, formatting, or output would require modifying the same class — violating SRP and
+increasing coupling.
 
 ---
 
@@ -40,13 +42,13 @@ public class InvoiceProcessor
 
 Responsibilities are split into separate components:
 
-| Component               | Responsibility                      |
-|------------------------|--------------------------------------|
-| `InvoiceParser`        | Parses and deserializes JSON input   |
-| `InvoiceValidator`     | Validates command-line arguments     |
-| `InvoiceCalculator`    | Computes total and average amounts   |
-| `AsciiReportFormatter` | Formats results into a printable form|
-| `InvoiceCli`           | Coordinates the execution flow       |
+| Component              | Responsibility                        |
+|------------------------|---------------------------------------|
+| `InvoiceParser`        | Parses and deserializes JSON input    |
+| `InvoiceValidator`     | Validates command-line arguments      |
+| `InvoiceCalculator`    | Computes total and average amounts    |
+| `AsciiReportFormatter` | Formats results into a printable form |
+| `InvoiceCli`           | Coordinates the execution flow        |
 
 🧩 These are wired together using **Dependency Injection** for modularity and testability.
 
