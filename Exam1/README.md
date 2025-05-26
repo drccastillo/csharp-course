@@ -30,13 +30,15 @@ Build a simple calculator that supports:
 
 3. Undo(): Remove the last entered number or operator.
 
-Users can chain operations (e.g. 5, +, 3, *, 2), then call Undo() multiple times to step back. After each change, `Evaluate()` should reflect the current expression.
+Users can chain operations (e.g. 5, +, 3, *, 2), then call Undo() multiple times to step back. After each change,
+`Evaluate()` should reflect the current expression.
 
 ### 2. Print Server Load Balancer
 
 Description:
 
-A shared print server distributes incoming print tasks to multiple printers to keep them busy. You need to simulate the assignment logic:
+A shared print server distributes incoming print tasks to multiple printers to keep them busy. You need to simulate the
+assignment logic:
 
 1. EnqueueJob(string jobId): A new print job arrives and is placed in the waiting line.
 
@@ -62,7 +64,8 @@ Build a console app that simulates a web browser’s back and forward buttons. U
 
 4. View their current page at any time
 
-Your implementation should efficiently handle an arbitrary sequence of these commands and report the current URL after each operation.
+Your implementation should efficiently handle an arbitrary sequence of these commands and report the current URL after
+each operation.
 
 ### 4. Single responsibility principle
 

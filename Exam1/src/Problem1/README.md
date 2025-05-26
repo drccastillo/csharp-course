@@ -1,6 +1,7 @@
 # Problem 1 - Expression Evaluator with Undo
 
 ## Overview
+
 This console application simulates a basic arithmetic expression evaluator with undo functionality. It supports:
 
 - Entering numbers and basic arithmetic operators (`+`, `-`, `*`, `/`)
@@ -28,6 +29,7 @@ Problem1/
 │   └── Validators/      # ExpressionValidator
 └── Tests/               # xUnit Tests covering 100%
 ```
+
 ---
 
 ## 🔷 UML Diagram
@@ -35,14 +37,19 @@ Problem1/
 ![UML Diagram](../../docs/uml/problem1-expression-evaluator.svg)
 
 ---
+
 ## ✅ Features Implemented
+
 - ✅ Evaluate expression with correct operator precedence
 - ✅ Undo last input
 - ✅ Clear all inputs
+
 ---
 
 ## 🧪 Test Coverage
+
 All logic is fully covered with **xUnit tests**:
+
 - Arithmetic operations
 - Operator precedence
 - Edge cases (division by zero, invalid expressions)
@@ -53,14 +60,16 @@ All logic is fully covered with **xUnit tests**:
 ---
 
 ## 🧠 Data Structure
+
 - Internally uses:
-  - `Stack<Token>`: stores entered inputs
-  - `Queue<Token>` + `Stack<OperatorToken>`: used in **Shunting Yard Algorithm**
-  - `Stack<double>`: used to evaluate postfix expressions
+    - `Stack<Token>`: stores entered inputs
+    - `Queue<Token>` + `Stack<OperatorToken>`: used in **Shunting Yard Algorithm**
+    - `Stack<double>`: used to evaluate postfix expressions
 
 ---
 
 ## ▶ How to Run
+
 ```bash
 # Navigate to the project directory
 cd src/Problem1
@@ -72,6 +81,7 @@ dotnet run --project src/Problem1/Problem1.csproj
 ---
 
 ## 🧾 Example Usage
+
 ```
 🧮 Expression Evaluator REPL — type 'help' for commands
 > input 15 / 3 - 8 * 2 + 21 / 7 * 2
@@ -87,6 +97,7 @@ dotnet run --project src/Problem1/Problem1.csproj
 ---
 
 ## 📚 References
+
 - [Microsoft.Extensions.Hosting](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host)
 - [Shunting Yard Algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
 - [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
@@ -95,6 +106,7 @@ dotnet run --project src/Problem1/Problem1.csproj
 ---
 
 ## 🏁 Future Extensions
+
 - Command history and replay
 - Saving expressions to file
 - Support for parentheses and variables

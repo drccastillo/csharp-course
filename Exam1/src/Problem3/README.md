@@ -1,6 +1,7 @@
 # Problem 3 - Browser History Navigation
 
 ## Overview
+
 This application simulates a web browser's back and forward navigation system. It allows users to:
 
 - Navigate to a new URL
@@ -8,7 +9,8 @@ This application simulates a web browser's back and forward navigation system. I
 - Move forward if a back action has been performed
 - View the current page at any time
 
-The system is built using Clean Architecture principles, SOLID design, and Microsoft.Extensions.Hosting for CLI bootstrapping.
+The system is built using Clean Architecture principles, SOLID design, and Microsoft.Extensions.Hosting for CLI
+bootstrapping.
 
 ---
 
@@ -42,11 +44,13 @@ Problem3/
 ## Design Highlights
 
 ### Data Structures Used
+
 - `Stack<string>`: Used for both _back_ and _forward_ navigation history
 
 The use of two stacks enables efficient LIFO navigation modeling for both directions.
 
 ### Navigation Rules
+
 - `Navigate(url)`: Adds new URL, clears forward stack
 - `Back()`: Moves to previous page if available
 - `Forward()`: Returns to a page after a back operation
@@ -55,6 +59,7 @@ The use of two stacks enables efficient LIFO navigation modeling for both direct
 ---
 
 ## Sample Execution
+
 ```csharp
 browser.Navigate("https://example.com");
 browser.Navigate("https://google.com");
@@ -66,6 +71,7 @@ Console.WriteLine("Current page: " + browser.Current());
 ```
 
 Expected output:
+
 ```
 Current page: https://google.com
 ```
@@ -73,7 +79,9 @@ Current page: https://google.com
 ---
 
 ## Unit Tests
+
 Tests are found in `BrowserServiceTests.cs`. They cover:
+
 - Navigation and current page tracking
 - Back and forward mechanics
 - Stack clearing after new navigation
@@ -84,6 +92,7 @@ Written using `xUnit` and follow the Arrange-Act-Assert structure.
 ---
 
 ## Run Instructions
+
 ```bash
 dotnet run --project src/Problem3/Problem3.csproj
 ```
@@ -91,6 +100,7 @@ dotnet run --project src/Problem3/Problem3.csproj
 ---
 
 ## References
+
 - [Microsoft Docs – Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
 - [Clean Architecture – Robert C. Martin](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [xUnit Testing Framework](https://xunit.net)
