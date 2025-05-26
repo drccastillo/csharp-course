@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace DataStructures
 {
     // LinkedList
-    public class CustomLinkedList<T>: IEnumerable<T>, IEnumerable where T : IEquatable<T>
+    public class CustomLinkedList<T> : IEnumerable<T>, IEnumerable where T : IEquatable<T>
     {
         private class Node
         {
@@ -44,7 +44,7 @@ namespace DataStructures
                 _tail!.Next = newNode;
                 _tail = newNode;
             }
-            
+
             _count++;
         }
 

@@ -19,7 +19,7 @@ var sampleJson = "[{\"Id\":1,\"Customer\":\"John Doe\",\"Amount\":100.50,\"Date\
 
 if (args.Length == 0)
 {
-  args = new[] { sampleJson };
+    args = new[] { sampleJson };
 }
 
 host.Services.GetRequiredService<InvoiceCli>().Run(args);

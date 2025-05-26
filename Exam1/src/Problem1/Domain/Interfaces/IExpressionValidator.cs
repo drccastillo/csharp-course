@@ -4,4 +4,4 @@ public interface IExpressionValidator
 {
     void ValidateNumber(double number);
     void ValidateOperator(char op);
-} 
+}
