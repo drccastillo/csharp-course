@@ -35,7 +35,7 @@ namespace DataStructures.Tests
             var dynamicArray = new DynamicArray<string>();
             dynamicArray.Add("Jose");
             var oldCount = dynamicArray.Count;
-            
+
             dynamicArray.Set(0, "Cristian");
             var newCount = dynamicArray.Count;
 

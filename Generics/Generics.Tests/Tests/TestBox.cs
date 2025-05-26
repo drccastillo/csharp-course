@@ -8,7 +8,7 @@ namespace Generics.Tests
         public void Box_ShouldStoreIntValue()
         {
             var intBox = new Box<int> { Value = 10 };
-            
+
             Assert.Equal(10, intBox.Value);
         }
 

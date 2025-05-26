@@ -5,7 +5,7 @@ namespace Generics.Tests
     public class TestPrinter
     {
         private readonly Printer _printer = new();
-        
+
         [Theory]
         [InlineData(0, 0)]
         [InlineData(10, 10)]
@@ -33,7 +33,7 @@ namespace Generics.Tests
             bool result = _printer.GetOrDefault(input);
             Assert.Equal(input, result);
         }
-        
+
         [Theory]
         [InlineData("hello")]
         [InlineData("")]
@@ -49,7 +49,7 @@ namespace Generics.Tests
             string result = _printer.GetOrDefault<string>(null);
             Assert.Null(result);
         }
-        
+
         [Fact]
         public void GetOrDefault_WithNullNullableInt_ReturnsNull()
         {
@@ -65,7 +65,7 @@ namespace Generics.Tests
             var result = _printer.GetOrDefault(input);
             Assert.Equal(99, result);
         }
-        
+
         [Fact]
         public void GetOrDefault_WithNullObject_ReturnsNull()
         {

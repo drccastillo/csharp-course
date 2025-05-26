@@ -33,6 +33,7 @@ public class OrderLoggerTests
 
         var logsField = typeof(OrderLogger).GetField("_logs", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         var logs = logsField?.GetValue(logger) as System.Collections.Generic.List<string>;
+        Assert.NotNull(logs); // Ensure logs is not null before checking if it's empty
         Assert.Empty(logs);
     }
 
