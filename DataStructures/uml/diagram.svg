@@ -1,1 +1,663 @@
-<svg aria-roledescription="class" role="graphics-document document" viewBox="0 0 1689.875 400" style="max-width: 1689.88px; background-color: white;" class="classDiagram" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="my-svg"><style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg g.classGroup text{fill:#9370DB;stroke:none;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:10px;}#my-svg g.classGroup text .title{font-weight:bolder;}#my-svg .nodeLabel,#my-svg .edgeLabel{color:#131300;}#my-svg .edgeLabel .label rect{fill:#ECECFF;}#my-svg .label text{fill:#131300;}#my-svg .labelBkg{background:#ECECFF;}#my-svg .edgeLabel .label span{background:#ECECFF;}#my-svg .classTitle{font-weight:bolder;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#my-svg .divider{stroke:#9370DB;stroke-width:1;}#my-svg g.clickable{cursor:pointer;}#my-svg g.classGroup rect{fill:#ECECFF;stroke:#9370DB;}#my-svg g.classGroup line{stroke:#9370DB;stroke-width:1;}#my-svg .classLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#my-svg .classLabel .label{fill:#9370DB;font-size:10px;}#my-svg .relation{stroke:#333333;stroke-width:1;fill:none;}#my-svg .dashed-line{stroke-dasharray:3;}#my-svg .dotted-line{stroke-dasharray:1 2;}#my-svg #compositionStart,#my-svg .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #compositionEnd,#my-svg .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #dependencyStart,#my-svg .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #dependencyStart,#my-svg .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #extensionStart,#my-svg .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #extensionEnd,#my-svg .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #aggregationStart,#my-svg .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #aggregationEnd,#my-svg .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #lollipopStart,#my-svg .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#my-svg #lollipopEnd,#my-svg .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#my-svg .edgeTerminals{font-size:11px;line-height:initial;}#my-svg .classTitleText{text-anchor:middle;font-size:18px;fill:#333;}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18" class="marker aggregation class" id="my-svg_class-aggregationStart"><path d="M 18,7 L9,13 L1,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker aggregation class" id="my-svg_class-aggregationEnd"><path d="M 18,7 L9,13 L1,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18" class="marker extension class" id="my-svg_class-extensionStart"><path d="M 1,7 L18,13 V 1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker extension class" id="my-svg_class-extensionEnd"><path d="M 1,1 V 13 L18,7 Z"/></marker></defs><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18" class="marker composition class" id="my-svg_class-compositionStart"><path d="M 18,7 L9,13 L1,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker composition class" id="my-svg_class-compositionEnd"><path d="M 18,7 L9,13 L1,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="6" class="marker dependency class" id="my-svg_class-dependencyStart"><path d="M 5,7 L9,13 L1,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="13" class="marker dependency class" id="my-svg_class-dependencyEnd"><path d="M 18,7 L9,13 L14,7 L9,1 Z"/></marker></defs><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="13" class="marker lollipop class" id="my-svg_class-lollipopStart"><circle r="6" cy="7" cx="7" fill="transparent" stroke="black"/></marker></defs><defs><marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="1" class="marker lollipop class" id="my-svg_class-lollipopEnd"><circle r="6" cy="7" cx="7" fill="transparent" stroke="black"/></marker></defs><g class="root"><g class="clusters"/><g class="edgePaths"/><g class="edgeLabels"/><g class="nodes"><g transform="translate(179.40625, 200)" id="classId-DynamicArray-0" class="node default"><g class="basic label-container"><path style="" fill="#ECECFF" stroke-width="0" stroke="none" d="M-171.40625 -192 L171.40625 -192 L171.40625 192 L-171.40625 192"/><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-171.40625 -192 C-67.56945100808386 -192, 36.26734798383228 -192, 171.40625 -192 M-171.40625 -192 C-47.49558096231219 -192, 76.41508807537562 -192, 171.40625 -192 M171.40625 -192 C171.40625 -90.54312527948693, 171.40625 10.913749441026141, 171.40625 192 M171.40625 -192 C171.40625 -39.604869750419766, 171.40625 112.79026049916047, 171.40625 192 M171.40625 192 C77.17575345546312 192, -17.054743089073753 192, -171.40625 192 M171.40625 192 C82.89950817479613 192, -5.60723365040775 192, -171.40625 192 M-171.40625 192 C-171.40625 104.71836867630309, -171.40625 17.436737352606173, -171.40625 -192 M-171.40625 192 C-171.40625 102.70994874552275, -171.40625 13.419897491045504, -171.40625 -192"/></g><g transform="translate(0, -168)" class="annotation-group text"/><g transform="translate(-68.484375, -168)" class="label-group text"><g transform="translate(0,-12)" style="font-weight: bolder" class="label"><foreignObject height="24" width="136.96875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>DynamicArray&lt;T&gt;</p></span></div></foreignObject></g></g><g transform="translate(-159.40625, -120)" class="members-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="73.390625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+int Count</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="92.9375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+int Capacity</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="116.65625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T this[int index]</p></span></div></foreignObject></g></g><g transform="translate(-159.40625, -24)" class="methods-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="119.3125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Get(int index)</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="198.1875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 239px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Set(int index, T value)</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="125.546875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 175px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Add(T item)</p></span></div></foreignObject></g><g transform="translate(0,60)" style="" class="label"><foreignObject height="24" width="221.28125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 265px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void InsertAt(int index, T item)</p></span></div></foreignObject></g><g transform="translate(0,84)" style="" class="label"><foreignObject height="24" width="188.09375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 232px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void RemoveAt(int index)</p></span></div></foreignObject></g><g transform="translate(0,108)" style="" class="label"><foreignObject height="24" width="92.03125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Clear()</p></span></div></foreignObject></g><g transform="translate(0,132)" style="" class="label"><foreignObject height="24" width="162"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 205px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool Contains(T item)</p></span></div></foreignObject></g><g transform="translate(0,156)" style="" class="label"><foreignObject height="24" width="141.53125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 190px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+int IndexOf(T item)</p></span></div></foreignObject></g><g transform="translate(0,180)" style="" class="label"><foreignObject height="24" width="250.328125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 323px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+IEnumerator&lt;T&gt; GetEnumerator()</p></span></div></foreignObject></g></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-171.40625 -144 C-85.71893263466254 -144, -0.03161526932507286 -144, 171.40625 -144 M-171.40625 -144 C-102.80731322938522 -144, -34.20837645877043 -144, 171.40625 -144"/></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-171.40625 -48 C-83.57429655056751 -48, 4.25765689886498 -48, 171.40625 -48 M-171.40625 -48 C-94.53215907755926 -48, -17.658068155118514 -48, 171.40625 -48"/></g></g><g transform="translate(579.984375, 200)" id="classId-CustomLinkedList-1" class="node default"><g class="basic label-container"><path style="" fill="#ECECFF" stroke-width="0" stroke="none" d="M-179.171875 -156 L179.171875 -156 L179.171875 156 L-179.171875 156"/><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-179.171875 -156 C-69.83436298133701 -156, 39.50314903732598 -156, 179.171875 -156 M-179.171875 -156 C-80.60231493050885 -156, 17.967245138982292 -156, 179.171875 -156 M179.171875 -156 C179.171875 -50.72279814581991, 179.171875 54.554403708360184, 179.171875 156 M179.171875 -156 C179.171875 -77.21304421767086, 179.171875 1.5739115646582889, 179.171875 156 M179.171875 156 C107.2458154811382 156, 35.31975596227639 156, -179.171875 156 M179.171875 156 C72.71164860076885 156, -33.74857779846229 156, -179.171875 156 M-179.171875 156 C-179.171875 41.11747977800897, -179.171875 -73.76504044398206, -179.171875 -156 M-179.171875 156 C-179.171875 68.01850318179117, -179.171875 -19.96299363641765, -179.171875 -156"/></g><g transform="translate(0, -132)" class="annotation-group text"/><g transform="translate(-84.015625, -132)" class="label-group text"><g transform="translate(0,-12)" style="font-weight: bolder" class="label"><foreignObject height="24" width="168.03125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 235px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>CustomLinkedList&lt;T&gt;</p></span></div></foreignObject></g></g><g transform="translate(-167.171875, -84)" class="members-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="73.390625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+int Count</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="116.65625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T this[int index]</p></span></div></foreignObject></g></g><g transform="translate(-167.171875, -12)" class="methods-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="164.671875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void AddFirst(T value)</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="163.8125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 209px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void AddLast(T value)</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="188.671875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 230px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool TryRemove(T value)</p></span></div></foreignObject></g><g transform="translate(0,60)" style="" class="label"><foreignObject height="24" width="170.03125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool Contains(T value)</p></span></div></foreignObject></g><g transform="translate(0,84)" style="" class="label"><foreignObject height="24" width="119.3125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Get(int index)</p></span></div></foreignObject></g><g transform="translate(0,108)" style="" class="label"><foreignObject height="24" width="92.03125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Clear()</p></span></div></foreignObject></g><g transform="translate(0,132)" style="" class="label"><foreignObject height="24" width="250.328125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 323px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+IEnumerator&lt;T&gt; GetEnumerator()</p></span></div></foreignObject></g></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-179.171875 -108 C-42.18069302083782 -108, 94.81048895832436 -108, 179.171875 -108 M-179.171875 -108 C-96.17863709699432 -108, -13.185399193988644 -108, 179.171875 -108"/></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-179.171875 -36 C-99.0295690550427 -36, -18.8872631100854 -36, 179.171875 -36 M-179.171875 -36 C-102.0120113892427 -36, -24.852147778485403 -36, 179.171875 -36"/></g></g><g transform="translate(921.046875, 200)" id="classId-CustomStack-2" class="node default"><g class="basic label-container"><path style="" fill="#ECECFF" stroke-width="0" stroke="none" d="M-111.890625 -111 L111.890625 -111 L111.890625 111 L-111.890625 111"/><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-111.890625 -111 C-53.16258634479218 -111, 5.565452310415637 -111, 111.890625 -111 M-111.890625 -111 C-24.70668525128481 -111, 62.47725449743038 -111, 111.890625 -111 M111.890625 -111 C111.890625 -38.85239224692029, 111.890625 33.29521550615942, 111.890625 111 M111.890625 -111 C111.890625 -53.65586735336886, 111.890625 3.688265293262276, 111.890625 111 M111.890625 111 C36.5887218669081 111, -38.713181266183796 111, -111.890625 111 M111.890625 111 C25.03494733323116 111, -61.82073033353768 111, -111.890625 111 M-111.890625 111 C-111.890625 38.136863430000304, -111.890625 -34.72627313999939, -111.890625 -111 M-111.890625 111 C-111.890625 37.950475692757905, -111.890625 -35.09904861448419, -111.890625 -111"/></g><g transform="translate(0, -87)" class="annotation-group text"/><g transform="translate(-65.359375, -87)" class="label-group text"><g transform="translate(0,-12)" style="font-weight: bolder" class="label"><foreignObject height="24" width="130.71875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>CustomStack&lt;T&gt;</p></span></div></foreignObject></g></g><g transform="translate(-99.890625, -39)" class="members-group text"/><g transform="translate(-99.890625, -9)" class="methods-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="134.421875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 180px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Push(T item)</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="62.40625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 113px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Pop()</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="70.40625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 119px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Peek()</p></span></div></foreignObject></g><g transform="translate(0,60)" style="" class="label"><foreignObject height="24" width="112.484375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool IsEmpty()</p></span></div></foreignObject></g><g transform="translate(0,84)" style="" class="label"><foreignObject height="24" width="97.953125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T[] ToArray()</p></span></div></foreignObject></g></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-111.890625 -63 C-31.489923649671596 -63, 48.91077770065681 -63, 111.890625 -63 M-111.890625 -63 C-39.46937581171383 -63, 32.95187337657234 -63, 111.890625 -63"/></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-111.890625 -39 C-47.063420458693244 -39, 17.763784082613512 -39, 111.890625 -39 M-111.890625 -39 C-49.481082571412486 -39, 12.928459857175028 -39, 111.890625 -39"/></g></g><g transform="translate(1210.3984375, 200)" id="classId-CustomQueue-3" class="node default"><g class="basic label-container"><path style="" fill="#ECECFF" stroke-width="0" stroke="none" d="M-127.4609375 -111 L127.4609375 -111 L127.4609375 111 L-127.4609375 111"/><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-127.4609375 -111 C-51.704178297335744 -111, 24.05258090532851 -111, 127.4609375 -111 M-127.4609375 -111 C-47.77647389126204 -111, 31.907989717475914 -111, 127.4609375 -111 M127.4609375 -111 C127.4609375 -45.260206516631285, 127.4609375 20.47958696673743, 127.4609375 111 M127.4609375 -111 C127.4609375 -27.55707898061634, 127.4609375 55.88584203876732, 127.4609375 111 M127.4609375 111 C76.40124997612608 111, 25.341562452252177 111, -127.4609375 111 M127.4609375 111 C45.53897902096894 111, -36.382979458062124 111, -127.4609375 111 M-127.4609375 111 C-127.4609375 59.055090534202336, -127.4609375 7.110181068404671, -127.4609375 -111 M-127.4609375 111 C-127.4609375 64.28787134365169, -127.4609375 17.57574268730339, -127.4609375 -111"/></g><g transform="translate(0, -87)" class="annotation-group text"/><g transform="translate(-68.90625, -87)" class="label-group text"><g transform="translate(0,-12)" style="font-weight: bolder" class="label"><foreignObject height="24" width="137.8125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 206px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>CustomQueue&lt;T&gt;</p></span></div></foreignObject></g></g><g transform="translate(-115.4609375, -39)" class="members-group text"/><g transform="translate(-115.4609375, -9)" class="methods-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="162.015625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 204px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void Enqueue(T item)</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="98.875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 144px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Dequeue()</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="70.40625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 119px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Peek()</p></span></div></foreignObject></g><g transform="translate(0,60)" style="" class="label"><foreignObject height="24" width="112.484375"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool IsEmpty()</p></span></div></foreignObject></g><g transform="translate(0,84)" style="" class="label"><foreignObject height="24" width="97.953125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T[] ToArray()</p></span></div></foreignObject></g></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-127.4609375 -63 C-42.10645641147063 -63, 43.24802467705874 -63, 127.4609375 -63 M-127.4609375 -63 C-55.3267054255365 -63, 16.807526648926995 -63, 127.4609375 -63"/></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-127.4609375 -39 C-60.191813574361944 -39, 7.077310351276111 -39, 127.4609375 -39 M-127.4609375 -39 C-51.9474258153889 -39, 23.566085869222206 -39, 127.4609375 -39"/></g></g><g transform="translate(1534.8671875, 200)" id="classId-DoublyLinkedList-4" class="node default"><g class="basic label-container"><path style="" fill="#ECECFF" stroke-width="0" stroke="none" d="M-147.0078125 -144 L147.0078125 -144 L147.0078125 144 L-147.0078125 144"/><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-147.0078125 -144 C-87.8469454296677 -144, -28.68607835933541 -144, 147.0078125 -144 M-147.0078125 -144 C-74.82650588511412 -144, -2.6451992702282325 -144, 147.0078125 -144 M147.0078125 -144 C147.0078125 -43.19860711142802, 147.0078125 57.602785777143964, 147.0078125 144 M147.0078125 -144 C147.0078125 -40.546085036991, 147.0078125 62.907829926017996, 147.0078125 144 M147.0078125 144 C37.894374254369026 144, -71.21906399126195 144, -147.0078125 144 M147.0078125 144 C71.31589541207947 144, -4.376021675841059 144, -147.0078125 144 M-147.0078125 144 C-147.0078125 49.32008433421379, -147.0078125 -45.35983133157242, -147.0078125 -144 M-147.0078125 144 C-147.0078125 70.52565081700872, -147.0078125 -2.948698365982551, -147.0078125 -144"/></g><g transform="translate(0, -120)" class="annotation-group text"/><g transform="translate(-81.34375, -120)" class="label-group text"><g transform="translate(0,-12)" style="font-weight: bolder" class="label"><foreignObject height="24" width="162.6875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 233px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>DoublyLinkedList&lt;T&gt;</p></span></div></foreignObject></g></g><g transform="translate(-135.0078125, -72)" class="members-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="73.390625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+int Count</p></span></div></foreignObject></g></g><g transform="translate(-135.0078125, -24)" class="methods-group text"><g transform="translate(0,-12)" style="" class="label"><foreignObject height="24" width="164.671875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void AddFirst(T value)</p></span></div></foreignObject></g><g transform="translate(0,12)" style="" class="label"><foreignObject height="24" width="163.8125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 209px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+void AddLast(T value)</p></span></div></foreignObject></g><g transform="translate(0,36)" style="" class="label"><foreignObject height="24" width="188.671875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 230px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool TryRemove(T value)</p></span></div></foreignObject></g><g transform="translate(0,60)" style="" class="label"><foreignObject height="24" width="170.03125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+bool Contains(T value)</p></span></div></foreignObject></g><g transform="translate(0,84)" style="" class="label"><foreignObject height="24" width="119.3125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T Get(int index)</p></span></div></foreignObject></g><g transform="translate(0,108)" style="" class="label"><foreignObject height="24" width="97.953125"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T[] ToArray()</p></span></div></foreignObject></g><g transform="translate(0,132)" style="" class="label"><foreignObject height="24" width="166.421875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="" class="nodeLabel markdown-node-label"><p>+T[] ToReversedArray()</p></span></div></foreignObject></g></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-147.0078125 -96 C-73.35645347380745 -96, 0.29490555238510296 -96, 147.0078125 -96 M-147.0078125 -96 C-39.6958592295795 -96, 67.616094040841 -96, 147.0078125 -96"/></g><g style="" class="divider"><path style="" fill="none" stroke-width="1.3" stroke="#9370DB" d="M-147.0078125 -48 C-75.7831820683097 -48, -4.5585516366193986 -48, 147.0078125 -48 M-147.0078125 -48 C-47.57830867662092 -48, 51.85119514675816 -48, 147.0078125 -48"/></g></g></g></g></g></svg>
+<svg aria-roledescription="class" role="graphics-document document" viewBox="0 0 1689.875 400"
+     style="max-width: 1689.88px; background-color: white;" class="classDiagram"
+     xmlns="http://www.w3.org/2000/svg" width="100%" id="my-svg">
+    <style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes
+        edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg
+        .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear
+        infinite;stroke-linecap:round;}#my-svg
+        .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear
+        infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg
+        .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg
+        .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg
+        .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg
+        .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg
+        .marker.cross{stroke:#333333;}#my-svg svg{font-family:"trebuchet
+        ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg g.classGroup
+        text{fill:#9370DB;stroke:none;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:10px;}#my-svg
+        g.classGroup text .title{font-weight:bolder;}#my-svg .nodeLabel,#my-svg .edgeLabel{color:#131300;}#my-svg
+        .edgeLabel .label rect{fill:#ECECFF;}#my-svg .label text{fill:#131300;}#my-svg
+        .labelBkg{background:#ECECFF;}#my-svg .edgeLabel .label span{background:#ECECFF;}#my-svg
+        .classTitle{font-weight:bolder;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node
+        polygon,#my-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#my-svg
+        .divider{stroke:#9370DB;stroke-width:1;}#my-svg g.clickable{cursor:pointer;}#my-svg g.classGroup
+        rect{fill:#ECECFF;stroke:#9370DB;}#my-svg g.classGroup line{stroke:#9370DB;stroke-width:1;}#my-svg .classLabel
+        .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#my-svg .classLabel
+        .label{fill:#9370DB;font-size:10px;}#my-svg .relation{stroke:#333333;stroke-width:1;fill:none;}#my-svg
+        .dashed-line{stroke-dasharray:3;}#my-svg .dotted-line{stroke-dasharray:1 2;}#my-svg #compositionStart,#my-svg
+        .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #compositionEnd,#my-svg
+        .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #dependencyStart,#my-svg
+        .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #dependencyStart,#my-svg
+        .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#my-svg #extensionStart,#my-svg
+        .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #extensionEnd,#my-svg
+        .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #aggregationStart,#my-svg
+        .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #aggregationEnd,#my-svg
+        .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#my-svg #lollipopStart,#my-svg
+        .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#my-svg #lollipopEnd,#my-svg
+        .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#my-svg
+        .edgeTerminals{font-size:11px;line-height:initial;}#my-svg
+        .classTitleText{text-anchor:middle;font-size:18px;fill:#333;}#my-svg :root{--mermaid-font-family:"trebuchet
+        ms",verdana,arial,sans-serif;}
+    </style>
+    <g>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18"
+                    class="marker aggregation class" id="my-svg_class-aggregationStart">
+                <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker aggregation class"
+                    id="my-svg_class-aggregationEnd">
+                <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18" class="marker extension class"
+                    id="my-svg_class-extensionStart">
+                <path d="M 1,7 L18,13 V 1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker extension class"
+                    id="my-svg_class-extensionEnd">
+                <path d="M 1,1 V 13 L18,7 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="18"
+                    class="marker composition class" id="my-svg_class-compositionStart">
+                <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="1" class="marker composition class"
+                    id="my-svg_class-compositionEnd">
+                <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="6" class="marker dependency class"
+                    id="my-svg_class-dependencyStart">
+                <path d="M 5,7 L9,13 L1,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="13" class="marker dependency class"
+                    id="my-svg_class-dependencyEnd">
+                <path d="M 18,7 L9,13 L14,7 L9,1 Z"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="13" class="marker lollipop class"
+                    id="my-svg_class-lollipopStart">
+                <circle r="6" cy="7" cx="7" fill="transparent" stroke="black"/>
+            </marker>
+        </defs>
+        <defs>
+            <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="1" class="marker lollipop class"
+                    id="my-svg_class-lollipopEnd">
+                <circle r="6" cy="7" cx="7" fill="transparent" stroke="black"/>
+            </marker>
+        </defs>
+        <g class="root">
+            <g class="clusters"/>
+            <g class="edgePaths"/>
+            <g class="edgeLabels"/>
+            <g class="nodes">
+                <g transform="translate(179.40625, 200)" id="classId-DynamicArray-0" class="node default">
+                    <g class="basic label-container">
+                        <path style="" fill="#ECECFF" stroke-width="0" stroke="none"
+                              d="M-171.40625 -192 L171.40625 -192 L171.40625 192 L-171.40625 192"/>
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-171.40625 -192 C-67.56945100808386 -192, 36.26734798383228 -192, 171.40625 -192 M-171.40625 -192 C-47.49558096231219 -192, 76.41508807537562 -192, 171.40625 -192 M171.40625 -192 C171.40625 -90.54312527948693, 171.40625 10.913749441026141, 171.40625 192 M171.40625 -192 C171.40625 -39.604869750419766, 171.40625 112.79026049916047, 171.40625 192 M171.40625 192 C77.17575345546312 192, -17.054743089073753 192, -171.40625 192 M171.40625 192 C82.89950817479613 192, -5.60723365040775 192, -171.40625 192 M-171.40625 192 C-171.40625 104.71836867630309, -171.40625 17.436737352606173, -171.40625 -192 M-171.40625 192 C-171.40625 102.70994874552275, -171.40625 13.419897491045504, -171.40625 -192"/>
+                    </g>
+                    <g transform="translate(0, -168)" class="annotation-group text"/>
+                    <g transform="translate(-68.484375, -168)" class="label-group text">
+                        <g transform="translate(0,-12)" style="font-weight: bolder" class="label">
+                            <foreignObject height="24" width="136.96875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>DynamicArray&lt;T&gt;</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-159.40625, -120)" class="members-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="73.390625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+int Count</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="92.9375">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+int Capacity</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="116.65625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T this[int index]</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-159.40625, -24)" class="methods-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="119.3125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Get(int index)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="198.1875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 239px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Set(int index, T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="125.546875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 175px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Add(T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,60)" style="" class="label">
+                            <foreignObject height="24" width="221.28125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 265px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void InsertAt(int index, T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,84)" style="" class="label">
+                            <foreignObject height="24" width="188.09375">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 232px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void RemoveAt(int index)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,108)" style="" class="label">
+                            <foreignObject height="24" width="92.03125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Clear()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,132)" style="" class="label">
+                            <foreignObject height="24" width="162">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 205px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool Contains(T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,156)" style="" class="label">
+                            <foreignObject height="24" width="141.53125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 190px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+int IndexOf(T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,180)" style="" class="label">
+                            <foreignObject height="24" width="250.328125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 323px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+IEnumerator&lt;T&gt; GetEnumerator()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-171.40625 -144 C-85.71893263466254 -144, -0.03161526932507286 -144, 171.40625 -144 M-171.40625 -144 C-102.80731322938522 -144, -34.20837645877043 -144, 171.40625 -144"/>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-171.40625 -48 C-83.57429655056751 -48, 4.25765689886498 -48, 171.40625 -48 M-171.40625 -48 C-94.53215907755926 -48, -17.658068155118514 -48, 171.40625 -48"/>
+                    </g>
+                </g>
+                <g transform="translate(579.984375, 200)" id="classId-CustomLinkedList-1" class="node default">
+                    <g class="basic label-container">
+                        <path style="" fill="#ECECFF" stroke-width="0" stroke="none"
+                              d="M-179.171875 -156 L179.171875 -156 L179.171875 156 L-179.171875 156"/>
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-179.171875 -156 C-69.83436298133701 -156, 39.50314903732598 -156, 179.171875 -156 M-179.171875 -156 C-80.60231493050885 -156, 17.967245138982292 -156, 179.171875 -156 M179.171875 -156 C179.171875 -50.72279814581991, 179.171875 54.554403708360184, 179.171875 156 M179.171875 -156 C179.171875 -77.21304421767086, 179.171875 1.5739115646582889, 179.171875 156 M179.171875 156 C107.2458154811382 156, 35.31975596227639 156, -179.171875 156 M179.171875 156 C72.71164860076885 156, -33.74857779846229 156, -179.171875 156 M-179.171875 156 C-179.171875 41.11747977800897, -179.171875 -73.76504044398206, -179.171875 -156 M-179.171875 156 C-179.171875 68.01850318179117, -179.171875 -19.96299363641765, -179.171875 -156"/>
+                    </g>
+                    <g transform="translate(0, -132)" class="annotation-group text"/>
+                    <g transform="translate(-84.015625, -132)" class="label-group text">
+                        <g transform="translate(0,-12)" style="font-weight: bolder" class="label">
+                            <foreignObject height="24" width="168.03125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 235px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>CustomLinkedList&lt;T&gt;</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-167.171875, -84)" class="members-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="73.390625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+int Count</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="116.65625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T this[int index]</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-167.171875, -12)" class="methods-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="164.671875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void AddFirst(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="163.8125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 209px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void AddLast(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="188.671875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 230px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool TryRemove(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,60)" style="" class="label">
+                            <foreignObject height="24" width="170.03125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool Contains(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,84)" style="" class="label">
+                            <foreignObject height="24" width="119.3125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Get(int index)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,108)" style="" class="label">
+                            <foreignObject height="24" width="92.03125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 141px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Clear()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,132)" style="" class="label">
+                            <foreignObject height="24" width="250.328125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 323px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+IEnumerator&lt;T&gt; GetEnumerator()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-179.171875 -108 C-42.18069302083782 -108, 94.81048895832436 -108, 179.171875 -108 M-179.171875 -108 C-96.17863709699432 -108, -13.185399193988644 -108, 179.171875 -108"/>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-179.171875 -36 C-99.0295690550427 -36, -18.8872631100854 -36, 179.171875 -36 M-179.171875 -36 C-102.0120113892427 -36, -24.852147778485403 -36, 179.171875 -36"/>
+                    </g>
+                </g>
+                <g transform="translate(921.046875, 200)" id="classId-CustomStack-2" class="node default">
+                    <g class="basic label-container">
+                        <path style="" fill="#ECECFF" stroke-width="0" stroke="none"
+                              d="M-111.890625 -111 L111.890625 -111 L111.890625 111 L-111.890625 111"/>
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-111.890625 -111 C-53.16258634479218 -111, 5.565452310415637 -111, 111.890625 -111 M-111.890625 -111 C-24.70668525128481 -111, 62.47725449743038 -111, 111.890625 -111 M111.890625 -111 C111.890625 -38.85239224692029, 111.890625 33.29521550615942, 111.890625 111 M111.890625 -111 C111.890625 -53.65586735336886, 111.890625 3.688265293262276, 111.890625 111 M111.890625 111 C36.5887218669081 111, -38.713181266183796 111, -111.890625 111 M111.890625 111 C25.03494733323116 111, -61.82073033353768 111, -111.890625 111 M-111.890625 111 C-111.890625 38.136863430000304, -111.890625 -34.72627313999939, -111.890625 -111 M-111.890625 111 C-111.890625 37.950475692757905, -111.890625 -35.09904861448419, -111.890625 -111"/>
+                    </g>
+                    <g transform="translate(0, -87)" class="annotation-group text"/>
+                    <g transform="translate(-65.359375, -87)" class="label-group text">
+                        <g transform="translate(0,-12)" style="font-weight: bolder" class="label">
+                            <foreignObject height="24" width="130.71875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>CustomStack&lt;T&gt;</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-99.890625, -39)" class="members-group text"/>
+                    <g transform="translate(-99.890625, -9)" class="methods-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="134.421875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 180px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Push(T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="62.40625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 113px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Pop()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="70.40625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 119px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Peek()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,60)" style="" class="label">
+                            <foreignObject height="24" width="112.484375">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool IsEmpty()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,84)" style="" class="label">
+                            <foreignObject height="24" width="97.953125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T[] ToArray()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-111.890625 -63 C-31.489923649671596 -63, 48.91077770065681 -63, 111.890625 -63 M-111.890625 -63 C-39.46937581171383 -63, 32.95187337657234 -63, 111.890625 -63"/>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-111.890625 -39 C-47.063420458693244 -39, 17.763784082613512 -39, 111.890625 -39 M-111.890625 -39 C-49.481082571412486 -39, 12.928459857175028 -39, 111.890625 -39"/>
+                    </g>
+                </g>
+                <g transform="translate(1210.3984375, 200)" id="classId-CustomQueue-3" class="node default">
+                    <g class="basic label-container">
+                        <path style="" fill="#ECECFF" stroke-width="0" stroke="none"
+                              d="M-127.4609375 -111 L127.4609375 -111 L127.4609375 111 L-127.4609375 111"/>
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-127.4609375 -111 C-51.704178297335744 -111, 24.05258090532851 -111, 127.4609375 -111 M-127.4609375 -111 C-47.77647389126204 -111, 31.907989717475914 -111, 127.4609375 -111 M127.4609375 -111 C127.4609375 -45.260206516631285, 127.4609375 20.47958696673743, 127.4609375 111 M127.4609375 -111 C127.4609375 -27.55707898061634, 127.4609375 55.88584203876732, 127.4609375 111 M127.4609375 111 C76.40124997612608 111, 25.341562452252177 111, -127.4609375 111 M127.4609375 111 C45.53897902096894 111, -36.382979458062124 111, -127.4609375 111 M-127.4609375 111 C-127.4609375 59.055090534202336, -127.4609375 7.110181068404671, -127.4609375 -111 M-127.4609375 111 C-127.4609375 64.28787134365169, -127.4609375 17.57574268730339, -127.4609375 -111"/>
+                    </g>
+                    <g transform="translate(0, -87)" class="annotation-group text"/>
+                    <g transform="translate(-68.90625, -87)" class="label-group text">
+                        <g transform="translate(0,-12)" style="font-weight: bolder" class="label">
+                            <foreignObject height="24" width="137.8125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 206px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>CustomQueue&lt;T&gt;</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-115.4609375, -39)" class="members-group text"/>
+                    <g transform="translate(-115.4609375, -9)" class="methods-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="162.015625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 204px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void Enqueue(T item)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="98.875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 144px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Dequeue()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="70.40625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 119px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Peek()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,60)" style="" class="label">
+                            <foreignObject height="24" width="112.484375">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool IsEmpty()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,84)" style="" class="label">
+                            <foreignObject height="24" width="97.953125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T[] ToArray()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-127.4609375 -63 C-42.10645641147063 -63, 43.24802467705874 -63, 127.4609375 -63 M-127.4609375 -63 C-55.3267054255365 -63, 16.807526648926995 -63, 127.4609375 -63"/>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-127.4609375 -39 C-60.191813574361944 -39, 7.077310351276111 -39, 127.4609375 -39 M-127.4609375 -39 C-51.9474258153889 -39, 23.566085869222206 -39, 127.4609375 -39"/>
+                    </g>
+                </g>
+                <g transform="translate(1534.8671875, 200)" id="classId-DoublyLinkedList-4" class="node default">
+                    <g class="basic label-container">
+                        <path style="" fill="#ECECFF" stroke-width="0" stroke="none"
+                              d="M-147.0078125 -144 L147.0078125 -144 L147.0078125 144 L-147.0078125 144"/>
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-147.0078125 -144 C-87.8469454296677 -144, -28.68607835933541 -144, 147.0078125 -144 M-147.0078125 -144 C-74.82650588511412 -144, -2.6451992702282325 -144, 147.0078125 -144 M147.0078125 -144 C147.0078125 -43.19860711142802, 147.0078125 57.602785777143964, 147.0078125 144 M147.0078125 -144 C147.0078125 -40.546085036991, 147.0078125 62.907829926017996, 147.0078125 144 M147.0078125 144 C37.894374254369026 144, -71.21906399126195 144, -147.0078125 144 M147.0078125 144 C71.31589541207947 144, -4.376021675841059 144, -147.0078125 144 M-147.0078125 144 C-147.0078125 49.32008433421379, -147.0078125 -45.35983133157242, -147.0078125 -144 M-147.0078125 144 C-147.0078125 70.52565081700872, -147.0078125 -2.948698365982551, -147.0078125 -144"/>
+                    </g>
+                    <g transform="translate(0, -120)" class="annotation-group text"/>
+                    <g transform="translate(-81.34375, -120)" class="label-group text">
+                        <g transform="translate(0,-12)" style="font-weight: bolder" class="label">
+                            <foreignObject height="24" width="162.6875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 233px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>DoublyLinkedList&lt;T&gt;</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-135.0078125, -72)" class="members-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="73.390625">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 124px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+int Count</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g transform="translate(-135.0078125, -24)" class="methods-group text">
+                        <g transform="translate(0,-12)" style="" class="label">
+                            <foreignObject height="24" width="164.671875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void AddFirst(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,12)" style="" class="label">
+                            <foreignObject height="24" width="163.8125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 209px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+void AddLast(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,36)" style="" class="label">
+                            <foreignObject height="24" width="188.671875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 230px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool TryRemove(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,60)" style="" class="label">
+                            <foreignObject height="24" width="170.03125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+bool Contains(T value)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,84)" style="" class="label">
+                            <foreignObject height="24" width="119.3125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 167px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T Get(int index)</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,108)" style="" class="label">
+                            <foreignObject height="24" width="97.953125">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 152px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T[] ToArray()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                        <g transform="translate(0,132)" style="" class="label">
+                            <foreignObject height="24" width="166.421875">
+                                <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 212px; text-align: center;"
+                                     xmlns="http://www.w3.org/1999/xhtml">
+                                    <span style="" class="nodeLabel markdown-node-label">
+                                        <p>+T[] ToReversedArray()</p>
+                                    </span>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-147.0078125 -96 C-73.35645347380745 -96, 0.29490555238510296 -96, 147.0078125 -96 M-147.0078125 -96 C-39.6958592295795 -96, 67.616094040841 -96, 147.0078125 -96"/>
+                    </g>
+                    <g style="" class="divider">
+                        <path style="" fill="none" stroke-width="1.3" stroke="#9370DB"
+                              d="M-147.0078125 -48 C-75.7831820683097 -48, -4.5585516366193986 -48, 147.0078125 -48 M-147.0078125 -48 C-47.57830867662092 -48, 51.85119514675816 -48, 147.0078125 -48"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

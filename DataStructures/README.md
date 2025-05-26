@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project provides both **theoretical foundations** and a **hands-on implementation** of essential data structures using advanced **object-oriented programming (OOP)** principles and **clean architecture**.
+This project provides both **theoretical foundations** and a **hands-on implementation** of essential data structures
+using advanced **object-oriented programming (OOP)** principles and **clean architecture**.
 
 It includes:
 
@@ -14,15 +15,16 @@ It includes:
 
 ## 📚 What is a Data Structure?
 
-A **data structure** is a specialized format for organizing, processing, retrieving, and storing data. It defines the relationship between data elements and the operations that can be performed on them.
+A **data structure** is a specialized format for organizing, processing, retrieving, and storing data. It defines the
+relationship between data elements and the operations that can be performed on them.
 
 ### Why Are Data Structures Important?
 
-- ✅ Efficient data management  
-- 📦 Logical data organization  
-- 🔍 Abstraction from implementation details  
-- 🔁 Reusability across applications  
-- ⚡ Performance improvements in algorithms  
+- ✅ Efficient data management
+- 📦 Logical data organization
+- 🔍 Abstraction from implementation details
+- 🔁 Reusability across applications
+- ⚡ Performance improvements in algorithms
 
 ---
 
@@ -51,13 +53,13 @@ Data is stored in hierarchical or interconnected formats:
 
 This project includes custom generic implementations of the following linear structures:
 
-| Structure              | Description                                                                                       |
-|------------------------|---------------------------------------------------------------------------------------------------|
-| `DynamicArray<T>`      | Resizable array with dynamic capacity and full CRUD operations, including enumerator support.     |
-| `CustomStack<T>`       | LIFO stack using singly linked list with `Push`, `Pop`, `Peek`, and conversion to array.          |
-| `CustomQueue<T>`       | Circular-buffer-based FIFO queue supporting `Enqueue`, `Dequeue`, and `Peek`.                     |
-| `CustomLinkedList<T>`  | Singly linked list with flexible node operations (`AddFirst`, `AddLast`, `TryRemove`, etc.).      |
-| `DoublyLinkedList<T>`  | Bidirectional linked list supporting reverse traversal and optimized insert/remove.               |
+| Structure             | Description                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------|
+| `DynamicArray<T>`     | Resizable array with dynamic capacity and full CRUD operations, including enumerator support. |
+| `CustomStack<T>`      | LIFO stack using singly linked list with `Push`, `Pop`, `Peek`, and conversion to array.      |
+| `CustomQueue<T>`      | Circular-buffer-based FIFO queue supporting `Enqueue`, `Dequeue`, and `Peek`.                 |
+| `CustomLinkedList<T>` | Singly linked list with flexible node operations (`AddFirst`, `AddLast`, `TryRemove`, etc.).  |
+| `DoublyLinkedList<T>` | Bidirectional linked list supporting reverse traversal and optimized insert/remove.           |
 
 📌 *Each structure includes essential methods and is fully type-generic (`<T>`).*
 
@@ -66,21 +68,22 @@ This project includes custom generic implementations of the following linear str
 ## ✅ Task Classification
 
 | File                      | Task Comment                            | Classification |
-|---------------------------|------------------------------------------|----------------|
-| `CustomQueue.cs`          | `// TODO: Implement queue`               | Required       |
-| `CustomStack.cs`          | `// TODO: Convertir a array`             | Required       |
-| `TestCustomStack.cs`      | `// TODO: Complete test` (2 places)      | Required       |
-| `TestCustomQueue.cs`      | `// TODO: All tests should pass`         | Required       |
-| `CustomLinkedList.cs`     | `// OPTIONAL: Enhance`                   | Optional       |
-| `DynamicArray.cs`         | `// OPTIONAL: Enhance the logic`         | Optional       |
-| `TestDoublyLinkedList.cs` | `// OPTIONAL: Add more tests if wanted`  | Optional       |
+|---------------------------|-----------------------------------------|----------------|
+| `CustomQueue.cs`          | `// TODO: Implement queue`              | Required       |
+| `CustomStack.cs`          | `// TODO: Convertir a array`            | Required       |
+| `TestCustomStack.cs`      | `// TODO: Complete test` (2 places)     | Required       |
+| `TestCustomQueue.cs`      | `// TODO: All tests should pass`        | Required       |
+| `CustomLinkedList.cs`     | `// OPTIONAL: Enhance`                  | Optional       |
+| `DynamicArray.cs`         | `// OPTIONAL: Enhance the logic`        | Optional       |
+| `TestDoublyLinkedList.cs` | `// OPTIONAL: Add more tests if wanted` | Optional       |
 
 ---
 
 ## 🧠 Design Decisions
 
 - **Circular Buffer**: Improves efficiency in `CustomQueue<T>` by avoiding data shifts.
-- **Linked List-Based Stack/Queue**: Enables constant-time insertions/removals in `CustomStack<T>` and `CustomLinkedList<T>`.
+- **Linked List-Based Stack/Queue**: Enables constant-time insertions/removals in `CustomStack<T>` and
+  `CustomLinkedList<T>`.
 - **Dynamic Capacity**: `DynamicArray<T>` doubles size to balance performance and memory usage.
 - **Bidirectional Navigation**: `DoublyLinkedList<T>` supports efficient forward and backward traversal.
 
