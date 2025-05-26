@@ -1,0 +1,26 @@
+@startuml
+class Box<T> {
+  +Box()
+  +Item: T
+}
+class SafeBox<T> {
+  +SafeBox()
+}
+class Calculator<T> {
+  +Add()
+  +Subtract()
+  +Multiply()
+  +Divide()
+}
+class Printer<T> {
+  +Print()
+}
+class Creator<T> {
+  +Create()
+}
+interface IRepository<T> {
+  +Add()
+  +Remove()
+  +Get()
+}
+@enduml

@@ -1,0 +1,51 @@
+@startuml
+class DynamicArray<T> {
+  +int Count
+  +int Capacity
+  +T Get(int index)
+  +void Set(int index, T value)
+  +void Add(T item)
+  +void InsertAt(int index, T item)
+  +void RemoveAt(int index)
+  +void Clear()
+  +bool Contains(T item)
+  +int IndexOf(T item)
+  +T this[int index]
+  +IEnumerator<T> GetEnumerator()
+}
+class CustomLinkedList<T> {
+  +int Count
+  +void AddFirst(T value)
+  +void AddLast(T value)
+  +bool TryRemove(T value)
+  +bool Contains(T value)
+  +T Get(int index)
+  +void Clear()
+  +T this[int index]
+  +IEnumerator<T> GetEnumerator()
+}
+class CustomStack<T> {
+  +void Push(T item)
+  +T Pop()
+  +T Peek()
+  +bool IsEmpty()
+  +T[] ToArray()
+}
+class CustomQueue<T> {
+  +void Enqueue(T item)
+  +T Dequeue()
+  +T Peek()
+  +bool IsEmpty()
+  +T[] ToArray()
+}
+class DoublyLinkedList<T> {
+  +int Count
+  +void AddFirst(T value)
+  +void AddLast(T value)
+  +bool TryRemove(T value)
+  +bool Contains(T value)
+  +T Get(int index)
+  +T[] ToArray()
+  +T[] ToReversedArray()
+}
+@enduml
