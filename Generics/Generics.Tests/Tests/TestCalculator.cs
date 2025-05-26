@@ -38,5 +38,19 @@ namespace Generics.Tests
             var calc = new Calculator<int>();
             Assert.Throws<DivideByZeroException>(() => calc.Divide(6, 0));
         }
+
+        [Fact]
+        public void Calculator_Add_ShouldWorkWithDouble()
+        {
+            var calc = new Calculator<double>();
+            Assert.Equal(5.5, calc.Add(2.2, 3.3), 1);
+        }
+
+        [Fact]
+        public void Calculator_Divide_ByZeroDouble_ShouldThrow()
+        {
+            var calc = new Calculator<double>();
+            Assert.Throws<DivideByZeroException>(() => calc.Divide(1.0, 0.0));
+        }
     }
 }

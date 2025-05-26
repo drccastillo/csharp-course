@@ -18,5 +18,30 @@
     /// </summary>
     public class FindTheFirstRepeatedWordProblem
     {
+        public static string? FindFirstRepeatedWord(string? input)
+        {
+            if (string.IsNullOrWhiteSpace(input)) return null;
+            var seen = new HashSet<string>();
+            var word = new System.Text.StringBuilder();
+            foreach (char c in input)
+            {
+                if (char.IsLetterOrDigit(c))
+                {
+                    word.Append(char.ToLowerInvariant(c));
+                }
+                else if (word.Length > 0)
+                {
+                    var w = word.ToString();
+                    if (!seen.Add(w)) return w;
+                    word.Clear();
+                }
+            }
+            if (word.Length > 0)
+            {
+                var w = word.ToString();
+                if (!seen.Add(w)) return w;
+            }
+            return null;
+        }
     }
 }

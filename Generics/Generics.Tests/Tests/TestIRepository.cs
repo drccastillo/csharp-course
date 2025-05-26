@@ -21,6 +21,22 @@ namespace Generics.Tests
             var result = repository.Find(999);
             Assert.Null(result);
         }
+
+        [Fact]
+        public void IRepository_ShouldAddAndGetMultipleValues()
+        {
+            var repository = new MemoryRepository<string>();
+            repository.Add("Item1");
+            repository.Add("Item2");
+            Assert.Equal("Item2", repository.Find(2));
+        }
+
+        [Fact]
+        public void IRepository_ShouldReturnDefaultForValueTypeIfNotFound()
+        {
+            var repository = new MemoryRepository<int>();
+            Assert.Equal(0, repository.Find(1));
+        }
     }
 
     public class MemoryRepository<T> : IRepository<T>
