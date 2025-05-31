@@ -74,5 +74,5 @@ This implementation applies the Open/Closed Principle by introducing the `IProdu
 
 ## UML Class Diagram
 
-![UML Diagram](uml/diagram.puml)
+![UML Diagram](uml/diagram.svg)
 
