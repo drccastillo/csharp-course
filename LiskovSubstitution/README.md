@@ -71,4 +71,4 @@ This implementation applies the Liskov Substitution Principle by segregating cha
 
 ## UML Class Diagram
 
-![UML Diagram](uml/diagram.puml)
+![UML Diagram](uml/diagram.svg)
