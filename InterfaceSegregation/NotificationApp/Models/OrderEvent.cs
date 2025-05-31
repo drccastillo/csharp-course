@@ -1,13 +1,14 @@
 namespace NotificationApp.Models;
 
-// TODO: Separate notification methods (you can use an array of enums)
+/// <summary>
+/// Represents an order event with selected notification channels.
+/// </summary>
 public record OrderEvent(
-  int OrderId,
-  string Customer,
-  string Status,
-  bool NotifyEmail,
-  bool NotifySms,
-  bool NotifyPush,
-  string CustomerEmail,
-  string CustomerPhone,
-  string? DeviceToken);
+    int OrderId,
+    string Customer,
+    string Status,
+    string CustomerEmail,
+    string CustomerPhone,
+    string? DeviceToken,
+    NotificationType[] NotificationTypes
+);

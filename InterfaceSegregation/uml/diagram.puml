@@ -1,0 +1,26 @@
+@startuml
+package NotificationApp {
+    enum NotificationType {
+        Email
+        Sms
+        Push
+    }
+    interface IEmailSender {
+        +SendEmail(to, subject, body)
+    }
+    interface ISmsSender {
+        +SendSms(to, text)
+    }
+    interface IPushSender {
+        +SendPush(deviceToken, title, message)
+    }
+    class NotificationFacade
+    class OrderEvent
+
+    NotificationFacade ..|> NotificationApp.Interfaces.INotificationFacade
+    OrderEvent --> NotificationType : NotificationTypes
+    NotificationFacade --> IEmailSender
+    NotificationFacade --> ISmsSender
+    NotificationFacade --> IPushSender
+}
+@enduml

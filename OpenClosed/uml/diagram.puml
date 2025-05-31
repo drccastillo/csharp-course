@@ -1,0 +1,26 @@
+@startuml
+package ProductExportApp {
+    interface IProductExporter {
+        +FormatType FormatKey
+        +Export(products): string
+    }
+    class JsonExporter
+    class CsvExporter
+    class XmlExporter
+    class YamlExporter
+
+    interface IExporterFactory {
+        +Export(products, formatType): string
+    }
+    class ExporterFactory
+    class ProductExportCli
+
+    JsonExporter ..|> IProductExporter
+    CsvExporter ..|> IProductExporter
+    XmlExporter ..|> IProductExporter
+    YamlExporter ..|> IProductExporter
+    ExporterFactory ..|> IExporterFactory
+    ExporterFactory --> IProductExporter : exporters
+    ProductExportCli --> IExporterFactory : exporterFactory
+}
+@enduml

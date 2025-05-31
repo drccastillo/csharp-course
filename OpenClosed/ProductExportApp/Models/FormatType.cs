@@ -4,5 +4,6 @@ public enum FormatType
 {
     Csv,
     Json,
-    Xml
+    Xml,
+    Yaml
 }
