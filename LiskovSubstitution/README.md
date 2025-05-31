@@ -50,5 +50,25 @@ High-level policy code expects every processor to refund. `BitcoinProcessor` can
 
 ## Example (solution)
 
-Now any `ICharger` (including `BitcoinPayment`) can replace another in charging context; refund logic depends only on `IRefunder`, so susbtituability holds and we don't crash the program.
-Saitisfies LSP.
+Now any `ICharger` (including `BitcoinPayment`) can replace another in charging context; refund logic depends only on `IRefunder`, so substitutability holds and we don't crash the program.
+Satisfies LSP.
+
+## Summary
+
+This implementation applies the Liskov Substitution Principle by segregating charging and refund behavior into `ICharger` and `IRefunder` interfaces. `PaymentRouter` is responsible for routing charge and refund requests, with refund logic refactored for single responsibility. The CLI (`PaymentCli`) validates JSON input for orders and delegates operations to the router.
+
+### Implemented Tasks
+| File                                | Task                                                           | Classification |
+|-------------------------------------|----------------------------------------------------------------|----------------|
+| `Services/PaymentRouter.cs`         | Refactored `TryRefund` for single responsibility principle     | Required       |
+| `Cli/PaymentCli.cs`                 | Implemented input validation and error handling for JSON input | Required       |
+| `Tests/Services/TestPaymentRouter.cs` | Fixed instantiation syntax and added positive refund scenario    | Required       |
+
+### Design Decisions & Patterns
+- **Dependency Injection**: `IPaymentRouter` and implementations injected into CLI.
+- **Single Responsibility Principle**: `TryRefund` logic split into methods for clarity.
+- **Command-like Routing**: `PaymentRouter` routes to `ICharger` and `IRefunder` instances.
+
+## UML Class Diagram
+
+![UML Diagram](uml/diagram.puml)

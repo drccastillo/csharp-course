@@ -5,26 +5,35 @@ namespace PaymentApp.Tests.Services;
 
 public class TestPaymentRouter
 {
-  public class DummyPayment : ICharger
-  {
-    public bool Charged { get; private set; }
-
-    public void Charge(decimal amount, string reference)
+    public sealed class DummyPayment : ICharger, IRefunder
     {
-      Charged = true;
+        public bool Charged { get; private set; }
+        public bool Refunded { get; private set; }
+
+        public void Charge(decimal amount, string reference) => Charged = true;
+        public void Refund(decimal amount, string reference) => Refunded = true;
     }
-  }
 
-  [Fact]
-  public void TryRefund_ShouldSkip_WhenNotSupported()
-  {
-    var dummyPayment = new DummyPayment();
-    var paymentRouter = new PaymentRouter([dummyPayment], []);
+    [Fact]
+    public void TryRefund_ShouldSkip_WhenNotSupported()
+    {
+        var dummyPayment = new DummyPayment();
+        var paymentRouter = new PaymentRouter(new[] { dummyPayment }, Array.Empty<IRefunder>());
 
-    var result = paymentRouter.TryRefund("dummy", 100, "ref123");
+        var result = paymentRouter.TryRefund("dummy", 100, "ref123");
 
-    Assert.False(result);
-  }
+        Assert.False(result);
+    }
 
-  // TODO: Implement a positive scenario for refund
+    [Fact]
+    public void TryRefund_ShouldInvokeRefund_WhenSupported()
+    {
+        var dummyPayment = new DummyPayment();
+        var paymentRouter = new PaymentRouter(new[] { dummyPayment }, new[] { dummyPayment });
+
+        var result = paymentRouter.TryRefund("dummy", 100, "ref123");
+
+        Assert.True(result);
+        Assert.True(dummyPayment.Refunded);
+    }
 }

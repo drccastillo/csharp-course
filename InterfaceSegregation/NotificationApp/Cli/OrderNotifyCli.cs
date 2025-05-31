@@ -9,14 +9,53 @@ public class OrderNotifyCli(INotificationFacade notifier)
 {
   private readonly INotificationFacade _notifier = notifier;
 
+  private class OrderEventInput
+  {
+    public int OrderId { get; set; }
+    public string Customer { get; set; } = string.Empty;
+    public string Status { get; set; } = string.Empty;
+    public string CustomerEmail { get; set; } = string.Empty;
+    public string CustomerPhone { get; set; } = string.Empty;
+    public string? DeviceToken { get; set; }
+    public bool NotifyEmail { get; set; }
+    public bool NotifySms { get; set; }
+    public bool NotifyPush { get; set; }
+  }
+
   public void Run(string[] args)
   {
     var json = args.Length > 0 ? args[0] : SampleJson();
-    var events = JsonSerializer.Deserialize<List<OrderEvent>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
-
-    foreach (var ev in events)
+    List<OrderEventInput>? inputs = null;
+    try
     {
-      _notifier.Notify(ev);
+      inputs = JsonSerializer.Deserialize<List<OrderEventInput>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    }
+    catch (JsonException ex)
+    {
+      Console.WriteLine($"Error: Invalid JSON input. {ex.Message}");
+      return;
+    }
+    if (inputs == null || inputs.Count == 0)
+    {
+      Console.WriteLine("Error: No events to process.");
+      return;
+    }
+    foreach (var input in inputs)
+    {
+      var types = new List<NotificationType>();
+      if (input.NotifyEmail) types.Add(NotificationType.Email);
+      if (input.NotifySms) types.Add(NotificationType.Sms);
+      if (input.NotifyPush) types.Add(NotificationType.Push);
+      var orderEvent = new OrderEvent(
+        input.OrderId,
+        input.Customer,
+        input.Status,
+        input.CustomerEmail,
+        input.CustomerPhone,
+        input.DeviceToken,
+        types.ToArray()
+      );
+      _notifier.Notify(orderEvent);
     }
   }
 

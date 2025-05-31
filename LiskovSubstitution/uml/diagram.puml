@@ -1,0 +1,29 @@
+@startuml
+package PaymentApp {
+    interface ICharger {
+        +Charge(amount, reference)
+    }
+    interface IRefunder {
+        +Refund(amount, reference)
+    }
+    class CreditCardPayment
+    class PayPalPayment
+    class BitcoinPayment
+
+    interface IPaymentRouter {
+        +Charge(method, amount, reference)
+        +TryRefund(method, amount, reference)
+    }
+    class PaymentRouter
+    class PaymentCli
+
+    CreditCardPayment ..|> ICharger
+    PayPalPayment ..|> ICharger
+    BitcoinPayment ..|> ICharger
+    CreditCardPayment ..|> IRefunder
+    PayPalPayment ..|> IRefunder
+
+    PaymentRouter ..|> IPaymentRouter
+    PaymentCli --> IPaymentRouter : paymentRouter
+}
+@enduml

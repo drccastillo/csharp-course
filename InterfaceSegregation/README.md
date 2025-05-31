@@ -51,3 +51,23 @@ Now each class depends only the capabilities it needs; adding Mobile client, Web
 
 > Note: Depending on the context the solution might be wrong.
 > Note 2: We didn't implement strategy pattern correctly. Not even simplified.
+
+## Summary
+
+This implementation applies the Interface Segregation Principle by defining focused interfaces (`IEmailSender`, `ISmsSender`, `IPushSender`) and using a `NotificationFacade` to aggregate only the required notification channels. The `OrderEvent` model uses a `NotificationType[]` to specify the channels dynamically.
+
+### Implemented Tasks
+| File                              | Task                                                         | Classification |
+|-----------------------------------|--------------------------------------------------------------|----------------|
+| `Models/OrderEvent.cs`            | Replaced individual flags with `NotificationType[]` enum list | Required       |
+| `Services/NotificationFacade.cs`  | Updated `Notify` logic to iterate over `NotificationTypes`    | Required       |
+| `Tests/Services/TestNotificationFacade.cs` | Updated tests to match new signature and added negative scenario | Required       |
+
+### Design Decisions & Patterns
+- **Facade Pattern**: `NotificationFacade` simplifies multiple notification channels behind a single interface.
+- **Interface Segregation**: Separate interfaces for email, SMS, and push notifications.
+- **Enum-based Configuration**: `NotificationType` enum drives channel selection in `OrderEvent`.
+
+## UML Class Diagram
+
+![UML Diagram](uml/diagram.puml)
