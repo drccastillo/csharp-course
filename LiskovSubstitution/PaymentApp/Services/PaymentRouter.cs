@@ -9,24 +9,40 @@ public class PaymentRouter(IEnumerable<ICharger> chargers, IEnumerable<IRefunder
 
   public void Charge(string method, decimal amount, string reference)
   {
+    PaymentValidation.ValidatePaymentArguments(method, amount, reference);
+    if (!_chargers.ContainsKey(method))
+      throw new ArgumentException($"Unknown payment method: {method}", nameof(method));
     _chargers[method].Charge(amount, reference);
   }
 
-  // TODO: Enhance this method apply simple Single Responsibility Principle
   public bool TryRefund(string method, decimal amount, string reference)
   {
-    var isRefunderAvailable = _refunders.TryGetValue(method, out var refunder);
-
-    if (isRefunderAvailable)
+    try
     {
-      refunder!.Refund(amount, reference);
+      PaymentValidation.ValidatePaymentArguments(method, amount, reference);
     }
-    else
+    catch (ArgumentException ex)
     {
-      ShowRefundNotSupportedMessage(method);
+      Console.WriteLine($"Refund failed: {ex.Message}");
+      return false;
     }
+    if (TryGetRefunder(method, out var refunder))
+    {
+      ProcessRefund(refunder!, amount, reference); // null-forgiving operator to silence CS8604
+      return true;
+    }
+    ShowRefundNotSupportedMessage(method);
+    return false;
+  }
 
-    return isRefunderAvailable;
+  private bool TryGetRefunder(string method, out IRefunder? refunder)
+  {
+    return _refunders.TryGetValue(method, out refunder);
+  }
+
+  private static void ProcessRefund(IRefunder refunder, decimal amount, string reference)
+  {
+    refunder.Refund(amount, reference);
   }
 
   private static void ShowRefundNotSupportedMessage(string method)

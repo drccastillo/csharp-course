@@ -53,3 +53,26 @@ public class Exporter
 
 With the solution the core application classes stay closed to change, yet we can extend with new exporters risk free.
 
+## Summary
+
+This implementation applies the Open/Closed Principle by introducing the `IProductExporter` abstraction and concrete exporters (`JsonExporter`, `CsvExporter`, `XmlExporter`, `YamlExporter`). A simple factory (`ExporterFactory`) selects the appropriate exporter based on `FormatType`, leveraging dependency injection and a lookup dictionary. The CLI (`ProductExportCli`) validates the format input and delegates the export operation to the factory.
+
+### Implemented Tasks
+| File                         | Task                                                   | Classification |
+|------------------------------|--------------------------------------------------------|----------------|
+| `Program.cs`                 | Register `YamlExporter` to support YAML format         | Required       |
+| `Services/YamlExporter.cs`   | Added new exporter implementation for YAML             | Required       |
+| `Cli/ProductExportCli.cs`    | Validate format input before export                    | Required       |
+| `Tests/Services/TestCsvExporter.cs`       | Added tests for JSON and XML exporters                | Required       |
+| `Tests/Services/TestExporterFactory.cs`   | Added test for custom exporter handling               | Required       |
+
+### Design Decisions & Patterns
+- **Strategy Pattern**: Exporters implement `IProductExporter` for interchangeable behaviors.
+- **Factory Pattern**: `ExporterFactory` encapsulates exporter lookup based on `FormatType`.
+- **Dependency Injection**: Services are registered and resolved via the DI container.
+- **Open/Closed Principle**: New exporters can be added without modifying existing core code.
+
+## UML Class Diagram
+
+![UML Diagram](uml/diagram.puml)
+

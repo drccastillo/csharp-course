@@ -10,8 +10,9 @@ var services = builder.Services;
 services.AddSingleton<IProductExporter, JsonExporter>();
 services.AddSingleton<IProductExporter, CsvExporter>();
 services.AddSingleton<IProductExporter, XmlExporter>();
-// TODO: Add exporter for YAML format
+services.AddSingleton<IProductExporter, YamlExporter>();
 services.AddSingleton<IExporterFactory, ExporterFactory>();
+services.AddSingleton<IFormatValidation, FormatValidation>();
 services.AddSingleton<ProductExportCli>();
 
 using var host = builder.Build();
