@@ -1,3 +1,2 @@
 John Doe,FullTime,5000,500
 Jane Smith,PartTime,3000,200
-Bob Johnson,Contractor,4000,0

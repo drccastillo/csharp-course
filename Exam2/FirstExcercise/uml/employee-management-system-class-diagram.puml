@@ -1,0 +1,83 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package CLI {
+  class Program {
+    + Main(string[] args)
+  }
+
+  class Runner {
+    - EmployeeManager manager
+    + Run(string[] args)
+  }
+
+  Program --> Runner
+  Runner --> Application.EmployeeManager
+}
+
+package Application {
+  interface INotifier {
+    + Notify(string)
+  }
+
+  interface IFileService {
+    + Save(file, employees)
+    + Load(file)
+    + AppendLog(file, message)
+  }
+
+  class EmployeeManager {
+    + AddEmployee(...)
+    + DisplayAllEmployees()
+    + ProcessPayroll()
+    + SaveToFile(...)
+  }
+
+  EmployeeManager --> Domain.Employee
+  EmployeeManager --> IFileService
+  EmployeeManager --> INotifier
+  EmployeeManager ..> Domain.SalaryCalculatorFactory : uses
+}
+
+package Domain {
+  class Employee {
+    - string Name
+    - EmployeeType Type
+    - decimal BaseSalary
+    - decimal Bonus
+  }
+
+  enum EmployeeType {
+    FullTime
+    PartTime
+    Contractor
+  }
+
+  Employee --> EmployeeType
+
+  interface ISalaryCalculator {
+    + CalculateSalary(Employee): decimal
+  }
+
+  class FullTimeSalaryCalculator
+  class PartTimeSalaryCalculator
+  class ContractorSalaryCalculator
+
+  ISalaryCalculator <|.. FullTimeSalaryCalculator
+  ISalaryCalculator <|.. PartTimeSalaryCalculator
+  ISalaryCalculator <|.. ContractorSalaryCalculator
+
+  class SalaryCalculatorFactory {
+    + GetCalculator(EmployeeType): ISalaryCalculator
+  }
+}
+
+package Infrastructure {
+  class ConsoleNotifier
+  class TextFileService
+
+  Application.INotifier <|.. ConsoleNotifier
+  Application.IFileService <|.. TextFileService
+}
+@enduml
