@@ -1,7 +1,13 @@
+using System;
+
 namespace CrossPlatform;
 
 public class UserInterfaceManagerBad
 {
+  private const string WindowsPlatform = "windows";
+  private const string MacOSPlatform = "macos";
+  private const string LinuxPlatform = "linux";
+
   // Violation of Open/Closed Principle - needs modification for new document type
   // Violation of Single Responsibility - knows about all document types
   // The code is repeated and tightly coupled

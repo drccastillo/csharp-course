@@ -1,27 +1,26 @@
+using System;
 using CrossPlatform.Interfaces;
 
 namespace CrossPlatform.Components;
 
-// TODO: Complete implement interface
 public sealed class MacOSCheckBox : ICheckBox
 {
-  public void Check(bool isChecked)
-  {
-    throw new NotImplementedException();
-  }
+    private const string PlatformName = "macOS";
+    private const string Style = "Cupertino";
+    private bool _isChecked = false;
 
-  public string GetStyle()
-  {
-    throw new NotImplementedException();
-  }
+    public void Check(bool isChecked)
+    {
+        _isChecked = isChecked;
+        Console.WriteLine($"{PlatformName} CheckBox {(isChecked ? "Checked" : "Unchecked")}");
+    }
 
-  public bool IsChecked()
-  {
-    throw new NotImplementedException();
-  }
+    public bool IsChecked() => _isChecked;
 
-  public void Render()
-  {
-    throw new NotImplementedException();
-  }
+    public string GetStyle() => Style;
+
+    public void Render()
+    {
+        Console.WriteLine($"Rendering {Style} checkbox");
+    }
 }

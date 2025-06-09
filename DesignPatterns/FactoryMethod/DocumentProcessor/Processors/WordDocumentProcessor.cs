@@ -11,5 +11,4 @@ public class WordDocumentProcessor : IDocumentProcessor
     Console.WriteLine($"Word processing completed with Microsoft format");
   }
 
-  public string GetSupportedFormat() => "Word";
 }

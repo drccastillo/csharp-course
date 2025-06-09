@@ -7,18 +7,19 @@ namespace WeatherApp.Extensions;
 
 public static class ServiceExtensions
 {
-  public static IServiceCollection AddCliServices(this IServiceCollection services, string useDefault = "true")
+  public static IServiceCollection AddCliServices(this IServiceCollection services, bool useDefault = true)
   {
     services.AddSingleton<HttpClient>();
+    services.AddSingleton<IHttpService, HttpService>();
     services.AddWeatherProviders(useDefault);
     services.AddSingleton<WeatherCli>();
 
     return services;
   }
 
-  private static IServiceCollection AddWeatherProviders(this IServiceCollection services, string useDefault)
+  private static IServiceCollection AddWeatherProviders(this IServiceCollection services, bool useDefault)
   {
-    if (useDefault == "true")
+    if (useDefault)
     {
       services.AddSingleton<IWeatherProvider, HttpWeatherProvider>();
     }

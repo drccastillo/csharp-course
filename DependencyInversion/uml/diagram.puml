@@ -1,0 +1,28 @@
+@startuml
+package "WeatherApp" {
+  interface IHttpService
+  interface IWeatherProvider
+  class HttpService
+  class HttpWeatherProvider
+  class SecondHttpWeatherProvider
+  class WeatherCli
+  class ServiceExtensions <<static>>
+}
+package "WeatherApp.Models" {
+  class Coordinates
+  class ForecastDto
+  class CurrentDto
+  class CurrentWeatherForecastDto
+}
+package "WeatherApp.Utils" {
+  class WeatherApiConstants <<static>>
+}
+
+WeatherCli --> IWeatherProvider
+HttpWeatherProvider --> IHttpService
+SecondHttpWeatherProvider --> IHttpService
+ServiceExtensions --> IHttpService
+ServiceExtensions --> HttpService
+ServiceExtensions --> IWeatherProvider
+
+@enduml

@@ -1,5 +1,16 @@
 # Dependency Inversion (DIP)
 
+## Summary
+
+- **Description:** Implementation of a CLI-based weather application demonstrating Dependency Inversion Principle via abstractions `IWeatherProvider` and `IHttpService`. The CLI (`WeatherCli`) depends on `IWeatherProvider` and providers fetch weather data through HTTP services (`HttpWeatherProvider`, `SecondHttpWeatherProvider`) decoupled via `IHttpService`.
+- **Discovered Tasks:** See **Scanned Comments Classification** below for the list and classification of TODO/OPTIONAL comments identified during task discovery.
+- **Design Decisions & Patterns Used:**
+  - Applied **Dependency Inversion Principle** by depending on abstractions (`IWeatherProvider`, `IHttpService`) rather than concrete implementations.
+  - Used **Strategy Pattern** to switch between different weather providers (`HttpWeatherProvider`, `SecondHttpWeatherProvider`) via configuration in `ServiceExtensions`.
+  - Utilized **Factory Method Pattern** in `ServiceExtensions` for conditional service registration (selecting provider implementation).
+  - Implemented **Extension Methods** (`AddCliServices`) to configure DI container.
+  - Employed **Value Object** (`Coordinates`) to encapsulate parsing and validation logic.
+
 ## Definition
 
 High-level modules must not depend on low-level modules; both should depend on abstractions. Abstractions must not depend on details. Details depend on abstraction therefore, in C# we are talking about interfaces.
@@ -60,3 +71,7 @@ Define an abstraction `IWeatherProvider`. The CLI Logic depends only on that int
 | `WeatherApp/Cli/WeatherCli.cs`                     | `// TODO: Create validator for the args`                                               | Required       |
 | `WeatherApp/Cli/WeatherCli.cs`                     | `// OPTIONAL: Separate the arguments`                                                  | Optional       |
 | `WeatherApp/Cli/WeatherCli.cs`                     | `// TODO: Validate that coordinates are valid coordinates`                             | Required       |
+
+## UML Class Diagram
+
+See [`uml/diagram.puml`](uml/diagram.puml) for the class diagram in PlantUML format.

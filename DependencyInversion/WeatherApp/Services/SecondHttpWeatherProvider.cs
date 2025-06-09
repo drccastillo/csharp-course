@@ -1,23 +1,29 @@
 using System;
-using System.Net.Http.Json;
 using WeatherApp.Interfaces;
 using WeatherApp.Models;
+using WeatherApp.Utils;
+using System.Globalization;
 
 namespace WeatherApp.Services;
 
-public class SecondHttpWeatherProvider(HttpClient httpClient) : IWeatherProvider
+public class SecondHttpWeatherProvider(IHttpService httpService) : IWeatherProvider
 {
-  private readonly HttpClient _httpClient = httpClient;
+  private readonly IHttpService _httpService = httpService;
 
-  private const string ForecastUrlTemplate =
-    "https://api.open-meteo.com/v1/forecast?latitude={0}&longitude={1}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m";
 
-  public async Task<double> GetTodayAsync(string latitude, string longitude)
+  public async Task<double> GetTodayAsync(Coordinates coordinates)
   {
-    // OPTIONAL: Search for a new endpoint to get the weather (refactor scaffolding for models)
-    var url = string.Format(ForecastUrlTemplate, latitude, longitude);
-    var response = await _httpClient.GetFromJsonAsync<ForecastDto>(url);
+      var url = string.Format(
+          WeatherApiConstants.CurrentWeatherUrlTemplate,
+          coordinates.Latitude.ToString("G", CultureInfo.InvariantCulture),
+          coordinates.Longitude.ToString("G", CultureInfo.InvariantCulture));
 
-    return response!.current.temperature_2m;
+      var forecast = await _httpService.GetFromJsonAsync<CurrentWeatherForecastDto>(url);
+      if (forecast?.current_weather is null)
+      {
+          throw new InvalidOperationException("Failed to retrieve weather data from API.");
+      }
+
+      return forecast.current_weather.temperature;
   }
 }

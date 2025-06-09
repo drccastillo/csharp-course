@@ -1,35 +1,44 @@
+using System;
+using System.Collections.Generic;
 using CrossPlatform.Interfaces;
 
-namespace CrossPlatform.Client;
-
-// TODO: Use the client and enhance the creation for user interfaces
-public class UserInterfaceApplication(
-  IUserInterfaceComponentFactory uiFactory)
+namespace CrossPlatform.Client
 {
-  private readonly IUserInterfaceComponentFactory _uiFactory = uiFactory ?? throw new ArgumentNullException(nameof(uiFactory));
-  private readonly List<IButton> _buttons = [];
-  private readonly List<ITextBox> _textBoxes = [];
-  private readonly List<ICheckBox> _checkBoxes = [];
+public class UserInterfaceApplication
+{
+    private readonly IUserInterfaceComponentFactory _uiFactory;
+    private readonly List<IButton> _buttons;
+    private readonly List<ITextBox> _textBoxes;
+    private readonly List<ICheckBox> _checkBoxes;
 
-  public void CreateLoginForm()
-  {
-    // Create username field
-    var usernameTextBox = _uiFactory.CreateTextBox();
-    usernameTextBox.Render();
-    usernameTextBox.SetText("Enter username");
-    _textBoxes.Add(usernameTextBox);
+    public UserInterfaceApplication(IUserInterfaceComponentFactory uiFactory)
+    {
+        _uiFactory = uiFactory ?? throw new ArgumentNullException(nameof(uiFactory));
+        _buttons = new List<IButton>();
+        _textBoxes = new List<ITextBox>();
+        _checkBoxes = new List<ICheckBox>();
+    }
 
-    // Create password field
-    var passwordTextBox = _uiFactory.CreateTextBox();
-    passwordTextBox.Render();
-    passwordTextBox.SetText("********");
-    _textBoxes.Add(passwordTextBox);
+    public void CreateLoginForm()
+    {
+        // Create username field
+        var usernameTextBox = _uiFactory.CreateTextBox();
+        usernameTextBox.Render();
+        usernameTextBox.SetText("Enter username");
+        _textBoxes.Add(usernameTextBox);
 
-    // Create login button
-    var loginButton = _uiFactory.CreateButton();
-    loginButton.Render();
-    _buttons.Add(loginButton);
+        // Create password field
+        var passwordTextBox = _uiFactory.CreateTextBox();
+        passwordTextBox.Render();
+        passwordTextBox.SetText("********");
+        _textBoxes.Add(passwordTextBox);
 
-    Console.WriteLine("Login form created succesfully");
-  }
+        // Create login button
+        var loginButton = _uiFactory.CreateButton();
+        loginButton.Render();
+        _buttons.Add(loginButton);
+
+        Console.WriteLine("Login form created successfully");
+    }
+}
 }

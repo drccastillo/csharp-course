@@ -1,4 +1,7 @@
-﻿using DocumentProcessor.Services;
+using System;
+using DocumentProcessor.Services;
+using DocumentProcessor.Models;
+using System.Collections.Generic;
 
 namespace DocumentProcessor;
 
@@ -28,25 +31,31 @@ public class Program
 
     Console.WriteLine("Applied Factory Method");
 
-    var documentService = new DocumentService();
-
-    var documentExamples = new[]
+    var factories = new DocumentProcessorFactory[]
     {
-      new { Type = "pdf", Content = "Important PDF contract content"},
-      new { Type = "word", Content = "Meeting notes and action items"},
-      new { Type = "excel", Content = "Financial data in tables"}
+        new PdfProcessorFactory(),
+        new WordProcessorFactory(),
+        new ExcelProcessorFactory()
+    };
+    var documentService = new DocumentService(factories);
+
+    var documentExamples = new Dictionary<DocumentType, string>
+    {
+        { DocumentType.Pdf, "Important PDF contract content" },
+        { DocumentType.Word, "Meeting notes and action items" },
+        { DocumentType.Excel, "Financial data in tables" }
     };
 
-    foreach (var document in documentExamples)
+    foreach (var (type, content) in documentExamples)
     {
-      try
-      {
-        documentService.ProcessDocument(document.Type, document.Content);
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"Error processing {document.Type}: {ex.Message}\n");
-      }
+        try
+        {
+            documentService.ProcessDocument(type, content);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error processing {type}: {ex.Message}\n");
+        }
     }
   }
 }

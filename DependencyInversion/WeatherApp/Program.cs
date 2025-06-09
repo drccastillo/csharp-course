@@ -2,13 +2,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using WeatherApp.Cli;
 using WeatherApp.Extensions;
+using Microsoft.Extensions.Configuration;
 
 var builder = Host.CreateApplicationBuilder(args);
 var services = builder.Services;
 
-// TODO: Enable switch between providers (using CLI arguments)
-// OPTIONAL: Create extensions for the following
-services.AddCliServices(builder.Configuration["UseDefault"]!);
+var useDefault = builder.Configuration.GetValue<bool>("UseDefault", true);
+services.AddCliServices(useDefault);
 
 using var host = builder.Build();
 await host.Services.GetRequiredService<WeatherCli>().RunAsync(args);

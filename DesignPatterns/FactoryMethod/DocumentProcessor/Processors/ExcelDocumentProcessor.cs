@@ -11,5 +11,4 @@ public class ExcelDocumentProcessor : IDocumentProcessor
     Console.WriteLine($"Excel processing completed with spreadsheet format");
   }
 
-  public string GetSupportedFormat() => "Excel";
 }

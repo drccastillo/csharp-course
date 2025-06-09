@@ -1,27 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using DocumentProcessor.Models;
+
 namespace DocumentProcessor.Services;
 
 public class DocumentService
 {
-  // Initialize available factories - follows Dependency Inversion Principle
-  private readonly Dictionary<string, DocumentProcessorFactory> _factories = new(StringComparer.OrdinalIgnoreCase)
-  {
-      { "pdf", new PdfProcessorFactory() },
-      { "word", new WordProcessorFactory() },
-      { "excel", new ExcelProcessorFactory() }
-  };
+    private readonly Dictionary<DocumentType, DocumentProcessorFactory> _factories;
 
-  public void ProcessDocument(string documentType, string content)
-  {
-    if (!_factories.TryGetValue(documentType, out var factory))
+    public DocumentService(IEnumerable<DocumentProcessorFactory> factories)
     {
-      throw new NotSupportedException($"Document type '{documentType}' is not supported");
+        _factories = factories.ToDictionary(
+            f => f.SupportedType,
+            f => f);
     }
 
-    factory.ProcessDocument(content);
-  }
+    public void ProcessDocument(DocumentType documentType, string content)
+    {
+        if (!_factories.TryGetValue(documentType, out var factory))
+        {
+            throw new NotSupportedException($"Document type '{documentType}' is not supported");
+        }
 
-  public IEnumerable<string> GetSupportedFormats()
-  {
-    return _factories.Keys;
-  }
+        factory.ProcessDocument(content);
+    }
+
+    public IEnumerable<DocumentType> GetSupportedFormats()
+    {
+        return _factories.Keys;
+    }
 }
