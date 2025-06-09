@@ -1,6 +1,12 @@
-## Design Patterns vs Design Principles vs Architecture Patterns vs Architecture Styles
+## Summary
 
-**Design Patterns** are reusable solutions to commonly occurring problems in software design. They represent best practices and provide a template for how to solve problems that can be used in many different situations. Design patterns are about organizing classes and objects to solve specific design problems at the code level.
+- **Description:** Implementation of Cross-Platform UI Components using Abstract Factory and document processing using Factory Method patterns.
+- **Discovered Tasks:** See **Scanned Comments Classification** below for the list and classification of identified TODO comments.
+- **Design Decisions & Patterns Used:**
+  - Applied **Abstract Factory** pattern for creating families of related UI components (`IUserInterfaceComponentFactory`, `LinuxUserInterfaceFactory`, `MacOSUserInterfaceFactory`, `WindowsUserInterfaceFactory`).
+  - Used **Factory Method** pattern for document processing (`DocumentProcessorFactory`, concrete factories for PDF, Word, Excel).
+
+## Design Patterns vs Design Principles vs Architecture Patterns vs Architecture Styles
 
 **Design Principles** are fundamental guidelines that inform good software design, such as SOLID principles, DRY (Don't Repeat Yourself), or KISS (Keep It Simple, Stupid). These are high-level concepts that guide decision-making throughout the development process.
 
@@ -126,5 +132,9 @@ In .NET, dependency injection containers often provide better alternatives to si
 | `AbstractFactory/CrossPlatform/Components/LinuxCheckBox.cs`                        | `// TODO: Complete implement interface`                                                           | Required       |
 | `AbstractFactory/CrossPlatform/Components/MacOSCheckBox.cs`                        | `// TODO: Complete implement interface`                                                           | Required       |
 | `AbstractFactory/CrossPlatform/Client/UserInterfaceApplication.cs`                 | `// TODO: Use the client and enhance the creation for user interfaces`                            | Required       |
+
+## UML Class Diagram
+
+See [`uml/diagram.puml`](uml/diagram.puml) for the class diagram in PlantUML format.
 
 The key to avoiding anti-patterns is understanding why they're problematic and learning to recognize them early in the design process. Code reviews, automated analysis tools, and following established principles like SOLID can help prevent many anti-patterns from creeping into your codebase.

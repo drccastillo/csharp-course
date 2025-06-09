@@ -1,3 +1,4 @@
+using System;
 using DocumentProcessor.Interfaces;
 
 namespace DocumentProcessor.Processors;
@@ -11,5 +12,4 @@ public class PdfDocumentProcessor : IDocumentProcessor
     Console.WriteLine($"PDF processing completed with Adobe format");
   }
 
-  public string GetSupportedFormat() => "PDF";
 }

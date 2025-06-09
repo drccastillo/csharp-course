@@ -1,6 +1,8 @@
 namespace WeatherApp.Interfaces;
 
+using WeatherApp.Models;
+
 public interface IWeatherProvider
 {
-  Task<double> GetTodayAsync(string latitude, string longitude);
+    Task<double> GetTodayAsync(Coordinates coordinates);
 }

@@ -1,22 +1,24 @@
+using System;
 using CrossPlatform.Interfaces;
 
 namespace CrossPlatform.Components;
 
-// TODO: Complete implement interface
 public sealed class LinuxButton : IButton
 {
-  public void Click()
-  {
-    throw new NotImplementedException();
-  }
+    private const string PlatformName = "Linux";
+    private const string Theme = "GTK";
+    private bool _isPressed = false;
 
-  public string GetTheme()
-  {
-    throw new NotImplementedException();
-  }
+    public void Click()
+    {
+        _isPressed = !_isPressed;
+        Console.WriteLine($"{PlatformName} Button clicked - State: {(_isPressed ? "Pressed" : "Released")}");
+    }
 
-  public void Render()
-  {
-    throw new NotImplementedException();
-  }
+    public string GetTheme() => Theme;
+
+    public void Render()
+    {
+        Console.WriteLine($"Rendering {Theme} button");
+    }
 }

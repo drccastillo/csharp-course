@@ -1,27 +1,22 @@
+using System;
 using CrossPlatform.Interfaces;
 
 namespace CrossPlatform.Components;
 
-// TODO: Complete implement interface
 public sealed class MacOSTextBox : ITextBox
 {
-  public string GetFont()
-  {
-    throw new NotImplementedException();
-  }
+    private const string PlatformName = "macOS";
+    private const string DefaultFont = "San Francisco";
+    private string _text = string.Empty;
 
-  public string GetText()
-  {
-    throw new NotImplementedException();
-  }
+    public void SetText(string text) => _text = text;
 
-  public void Render()
-  {
-    throw new NotImplementedException();
-  }
+    public string GetText() => _text;
 
-  public void SetText(string text)
-  {
-    throw new NotImplementedException();
-  }
+    public string GetFont() => DefaultFont;
+
+    public void Render()
+    {
+        Console.WriteLine($"Rendering {PlatformName} TextBox with font {GetFont()} and text '{_text}'");
+    }
 }
