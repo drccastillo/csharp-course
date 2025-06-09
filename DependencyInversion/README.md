@@ -46,3 +46,17 @@ Define an abstraction `IWeatherProvider`. The CLI Logic depends only on that int
 
 - Dependency Injection: It is a techinique, it is a way, it is a pattern of using interfaces to apply any concrete classes
 - Dependency Inversion: It is a design principle...
+
+### Scanned Comments Classification
+
+| File                                               | Comment                                                                                | Classification |
+|----------------------------------------------------|----------------------------------------------------------------------------------------|----------------|
+| `WeatherApp.Tests/Cli/TestWatherCli.cs`            | `// TODO: Find the best way to test the cli`                                           | Required       |
+| `WeatherApp/Services/HttpWeatherProvider.cs`       | `// TODO: Create a level of http abstraction for http requests into HttpService with provided url` | Required       |
+| `WeatherApp/Services/HttpWeatherProvider.cs`       | `// TODO: Apply validators or error handling for response`                             | Required       |
+| `WeatherApp/Services/SecondHttpWeatherProvider.cs` | `// OPTIONAL: Search for a new endpoint to get the weather (refactor scaffolding for models)` | Optional       |
+| `WeatherApp/Program.cs`                            | `// TODO: Enable switch between providers (using CLI arguments)`                       | Required       |
+| `WeatherApp/Program.cs`                            | `// OPTIONAL: Create extensions for the following`                                     | Optional       |
+| `WeatherApp/Cli/WeatherCli.cs`                     | `// TODO: Create validator for the args`                                               | Required       |
+| `WeatherApp/Cli/WeatherCli.cs`                     | `// OPTIONAL: Separate the arguments`                                                  | Optional       |
+| `WeatherApp/Cli/WeatherCli.cs`                     | `// TODO: Validate that coordinates are valid coordinates`                             | Required       |

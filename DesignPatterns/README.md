@@ -113,4 +113,18 @@ In .NET, dependency injection containers often provide better alternatives to si
 - **Memory Leaks**: Not properly disposing of resources or managing event subscriptions
 - **N+1 Query Problem**: Making multiple database queries in loops instead of using joins or bulk operations
 
+### Scanned Comments Classification
+
+| File                                                                               | Comment                                                                                           | Classification |
+|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------|
+| `AbstractFactory/CrossPlatform/Components/MacOSTextBox.cs`                         | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/LinuxTextBox.cs`                         | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/LinuxButton.cs`                          | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/MacOSButton.cs`                          | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/WindowsTextBox.cs`                       | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/WindowsCheckBox.cs`                      | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/LinuxCheckBox.cs`                        | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Components/MacOSCheckBox.cs`                        | `// TODO: Complete implement interface`                                                           | Required       |
+| `AbstractFactory/CrossPlatform/Client/UserInterfaceApplication.cs`                 | `// TODO: Use the client and enhance the creation for user interfaces`                            | Required       |
+
 The key to avoiding anti-patterns is understanding why they're problematic and learning to recognize them early in the design process. Code reviews, automated analysis tools, and following established principles like SOLID can help prevent many anti-patterns from creeping into your codebase.
