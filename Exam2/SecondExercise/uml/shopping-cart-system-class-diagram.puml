@@ -1,0 +1,78 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package CLI {
+  class Program {
+    + Main(string[] args)
+  }
+
+  class CartRunner {
+    - ShoppingCart cart
+    - IProductRepository repo
+    + Run(string[] args)
+  }
+
+  Program --> CartRunner
+  CartRunner --> Application.ShoppingCart
+  CartRunner --> Infrastructure.IProductRepository
+}
+
+package Application {
+  interface ICartProcessor {
+    + Process(items: IEnumerable<ProductQuantity>)
+  }
+
+  class ShoppingCart {
+    + AddItem(IProduct, int)
+    + DisplayCart()
+    + Checkout()
+  }
+
+  class ConsoleCartProcessor
+
+  ICartProcessor <|.. ConsoleCartProcessor
+  ShoppingCart --> Domain.ProductQuantity
+  ShoppingCart --> ICartProcessor
+}
+
+package Domain {
+  interface IProduct {
+    + Name: string
+    + Price: decimal
+  }
+
+  interface IShippable {
+    + Weight: decimal
+    + CalculateShipping(): decimal
+    + Ship(): void
+  }
+
+  interface IDownloadable {
+    + DownloadUrl: string
+    + Download(): void
+  }
+
+  class PhysicalProduct
+  class DigitalProduct
+  class ProductQuantity {
+    + Product: IProduct
+    + Quantity: int
+  }
+
+  IProduct <|.. PhysicalProduct
+  IProduct <|.. DigitalProduct
+  IShippable <|.. PhysicalProduct
+  IDownloadable <|.. DigitalProduct
+}
+
+package Infrastructure {
+  interface IProductRepository {
+    + GetProduct(string): IProduct
+  }
+
+  class InMemoryProductRepository
+
+  IProductRepository <|.. InMemoryProductRepository
+}
+@enduml
