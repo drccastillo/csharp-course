@@ -19,6 +19,11 @@ High-level modules must not depend on low-level modules; both should depend on a
 
 We want a CLI tool that prints today's temperature for a city. The first pass wires the high-level CLI directly to an HTTP-fetching service.
 
+## CLI Usage
+```bash
+dotnet run --project WeatherApp/WeatherApp.csproj -- 10.5,20.3
+```
+
 ## Solution (bad)
 
 ```csharp
@@ -74,4 +79,4 @@ Define an abstraction `IWeatherProvider`. The CLI Logic depends only on that int
 
 ## UML Class Diagram
 
-See [`uml/diagram.puml`](uml/diagram.puml) for the class diagram in PlantUML format.
+![UML Diagram](uml/diagram.svg)

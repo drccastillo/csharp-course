@@ -1,0 +1,53 @@
+@startuml
+' Abstract Factory - UML Class Diagram
+
+package AbstractFactory {
+  interface IComponent
+  interface IButton
+  interface ITextBox
+  interface ICheckBox
+  interface IUserInterfaceComponentFactory
+  class LinuxButton
+  class MacOSButton
+  class WindowsButton
+  class LinuxTextBox
+  class MacOSTextBox
+  class WindowsTextBox
+  class LinuxCheckBox
+  class MacOSCheckBox
+  class WindowsCheckBox
+  class LinuxUserInterfaceFactory
+  class MacOSUserInterfaceFactory
+  class WindowsUserInterfaceFactory
+  class UserInterfaceService
+  class UserInterfaceCli
+  class UserInterfaceApplication
+}
+
+IButton ..|> IComponent
+ITextBox ..|> IComponent
+ICheckBox ..|> IComponent
+
+LinuxButton ..|> IButton
+MacOSButton ..|> IButton
+WindowsButton ..|> IButton
+
+LinuxTextBox ..|> ITextBox
+MacOSTextBox ..|> ITextBox
+WindowsTextBox ..|> ITextBox
+
+LinuxCheckBox ..|> ICheckBox
+MacOSCheckBox ..|> ICheckBox
+WindowsCheckBox ..|> ICheckBox
+
+LinuxUserInterfaceFactory ..|> IUserInterfaceComponentFactory
+MacOSUserInterfaceFactory ..|> IUserInterfaceComponentFactory
+WindowsUserInterfaceFactory ..|> IUserInterfaceComponentFactory
+
+IUserInterfaceComponentFactory --> IButton
+IUserInterfaceComponentFactory --> ITextBox
+IUserInterfaceComponentFactory --> ICheckBox
+UserInterfaceService --> IUserInterfaceComponentFactory
+UserInterfaceCli --> UserInterfaceService
+UserInterfaceApplication --> IUserInterfaceComponentFactory
+@enduml

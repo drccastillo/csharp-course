@@ -37,14 +37,18 @@ namespace WeatherApp.Tests.Services
             await Assert.ThrowsAsync<InvalidOperationException>(() => provider.GetTodayAsync(new Coordinates(1, 2)));
         }
 
-        private class StubHttpService<T> : IHttpService
+        private class StubHttpService<TDto> : IHttpService
         {
-            private readonly T? _dto;
+            private readonly TDto? _dto;
 
-            public StubHttpService(T? dto) => _dto = dto;
+            public StubHttpService(TDto? dto) => _dto = dto;
 
-            public Task<TOut?> GetFromJsonAsync<TOut>(string url) where TOut : class
-                => Task.FromResult(_dto as TOut);
+            public Task<T?> GetFromJsonAsync<T>(string url)
+            {
+                if (_dto is T t)
+                    return Task.FromResult<T?>(t);
+                return Task.FromResult<T?>(default);
+            }
         }
     }
 }

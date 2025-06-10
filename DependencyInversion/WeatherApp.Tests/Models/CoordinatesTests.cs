@@ -17,15 +17,14 @@ namespace WeatherApp.Tests.Models
         }
 
         [Theory]
-        [InlineData(null)]
-        [InlineData("")]
-        [InlineData("  ")]
-        [InlineData("invalid")]
-        [InlineData("1.0")]
-        [InlineData("1.0,2.0,3.0")]
-        public void Parse_InvalidInput_Throws(string input)
+        [InlineData("", typeof(ArgumentException))]
+        [InlineData("  ", typeof(ArgumentException))]
+        [InlineData("invalid", typeof(FormatException))]
+        [InlineData("1.0", typeof(FormatException))]
+        [InlineData("1.0,2.0,3.0", typeof(FormatException))]
+        public void Parse_InvalidInput_Throws(string input, Type expectedExceptionType)
         {
-            Assert.Throws<Exception>(() => Coordinates.Parse(input));
+            Assert.Throws(expectedExceptionType, () => Coordinates.Parse(input));
         }
     }
 }

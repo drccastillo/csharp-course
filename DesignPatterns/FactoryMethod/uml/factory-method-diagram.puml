@@ -1,0 +1,33 @@
+@startuml
+' Factory Method - UML Class Diagram
+
+package FactoryMethod {
+  interface IDocumentProcessor
+  enum DocumentType
+  abstract class DocumentProcessorFactory
+  class PdfProcessorFactory
+  class WordProcessorFactory
+  class ExcelProcessorFactory
+  class DocumentService
+  class Program
+  class DocumentProcessorBad <<anti-pattern>>
+}
+
+PdfProcessorFactory ..|> DocumentProcessorFactory
+WordProcessorFactory ..|> DocumentProcessorFactory
+ExcelProcessorFactory ..|> DocumentProcessorFactory
+
+DocumentProcessorFactory --> IDocumentProcessor
+PdfProcessorFactory --> IDocumentProcessor
+WordProcessorFactory --> IDocumentProcessor
+ExcelProcessorFactory --> IDocumentProcessor
+
+DocumentService --> DocumentProcessorFactory
+DocumentService --> DocumentType
+DocumentService --> IDocumentProcessor
+
+Program --> DocumentProcessorBad
+Program --> DocumentProcessorFactory
+Program --> DocumentService
+Program --> DocumentType
+@enduml

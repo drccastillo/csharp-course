@@ -1,17 +1,11 @@
-using System;
-using CrossPlatform.Client;
-using CrossPlatform.Interfaces;
-using CrossPlatform.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using CrossPlatform.Cli;
+using CrossPlatform.Extensions;
 
-var argsList = args.Length > 0 ? args : new[] { "windows" };
-var platform = argsList[0].ToLowerInvariant();
-IUserInterfaceComponentFactory factory = platform switch
-{
-    "windows" => new WindowsUserInterfaceFactory(),
-    "macos"   => new MacOSUserInterfaceFactory(),
-    "linux"   => new LinuxUserInterfaceFactory(),
-    _ => throw new ArgumentException($"Unknown platform: {platform}")
-};
+var builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddCrossPlatformServices();
 
-var app = new UserInterfaceApplication(factory);
-app.CreateLoginForm();
+using var host = builder.Build();
+var cli = host.Services.GetRequiredService<UserInterfaceCli>();
+cli.Run(args);
