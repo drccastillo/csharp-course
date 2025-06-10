@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WeatherApp.Extensions;
 using WeatherApp.Interfaces;
 using WeatherApp.Services;
+using WeatherApp.Cli;
 using Xunit;
 
 namespace WeatherApp.Tests.Extensions

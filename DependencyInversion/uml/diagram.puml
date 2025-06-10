@@ -1,4 +1,6 @@
 @startuml
+' Dependency Inversion Principle - UML Class Diagram
+
 package "WeatherApp" {
   interface IHttpService
   interface IWeatherProvider
@@ -8,21 +10,33 @@ package "WeatherApp" {
   class WeatherCli
   class ServiceExtensions <<static>>
 }
+
 package "WeatherApp.Models" {
   class Coordinates
   class ForecastDto
   class CurrentDto
   class CurrentWeatherForecastDto
+  class CurrentWeatherDto
 }
+
 package "WeatherApp.Utils" {
   class WeatherApiConstants <<static>>
 }
 
-WeatherCli --> IWeatherProvider
+' Implementations
+HttpService ..|> IHttpService
+HttpWeatherProvider ..|> IWeatherProvider
+SecondHttpWeatherProvider ..|> IWeatherProvider
+
+' Dependencies
 HttpWeatherProvider --> IHttpService
 SecondHttpWeatherProvider --> IHttpService
-ServiceExtensions --> IHttpService
-ServiceExtensions --> HttpService
-ServiceExtensions --> IWeatherProvider
+WeatherCli --> IWeatherProvider
+ServiceExtensions ..> IHttpService
+ServiceExtensions ..> IWeatherProvider
+
+' Model relationships
+ForecastDto *-- CurrentDto
+CurrentWeatherForecastDto *-- CurrentWeatherDto
 
 @enduml

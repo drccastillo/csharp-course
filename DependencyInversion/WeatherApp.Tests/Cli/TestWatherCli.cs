@@ -1,5 +1,3 @@
-namespace WeatherApp.Tests.Cli;
-
 using System;
 using System.IO;
 using System.Threading.Tasks;

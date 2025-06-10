@@ -135,6 +135,11 @@ In .NET, dependency injection containers often provide better alternatives to si
 
 ## UML Class Diagram
 
-See [`uml/diagram.puml`](uml/diagram.puml) for the class diagram in PlantUML format.
+See the class diagram in PlantUML format.
+
+![UML Diagram](AbstractFactory/uml/abstract-factory-diagram.svg)
+
+![UML Diagram](FactoryMethod/uml/factory-method-diagram.svg)
+
 
 The key to avoiding anti-patterns is understanding why they're problematic and learning to recognize them early in the design process. Code reviews, automated analysis tools, and following established principles like SOLID can help prevent many anti-patterns from creeping into your codebase.
