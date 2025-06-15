@@ -1,6 +1,8 @@
-using ReportGenerationSystem.Factories;
-using ReportGenerationSystem.ReportGenerators;
-using ReportGenerationSystem.Templates;
+using System.Collections.Generic;
+using ReportGenerationSystem.Models;
+using ReportGenerationSystem.Services.Factories;
+using ReportGenerationSystem.Services.ReportGenerators;
+using ReportGenerationSystem.Services.Templates;
 
 namespace ReportGenerationSystem.Services;
 
@@ -21,21 +23,23 @@ public class ReportService
     }
   }
 
-  // TODO: This should be an enum 'format'
-  public void GenerateAllReportsInFormat(string format)
-  {
-    var strategy = FormatStrategyFactory.CreateStrategy(format);
-
-    var generators = new List<ReportGenerator>
+    /// <summary>
+    /// Generates all reports using the specified format type.
+    /// </summary>
+    public void GenerateAllReportsInFormat(FormatType format)
     {
-      new SalesReportGenerator(strategy),
-      new InventoryReportGenerator(strategy),
-      new UserReportGenerator(strategy)
-    };
+        var strategy = FormatStrategyFactory.CreateStrategy(format);
 
-    foreach (var generator in generators)
-    {
-      generator.GenerateReport();
+        var generators = new List<ReportGenerator>
+        {
+            new SalesReportGenerator(strategy),
+            new InventoryReportGenerator(strategy),
+            new UserReportGenerator(strategy)
+        };
+
+        foreach (var generator in generators)
+        {
+            generator.GenerateReport();
+        }
     }
-  }
 }

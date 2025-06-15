@@ -1,0 +1,70 @@
+@startuml
+interface ISQLQueryBuilder {
+    + Reset()
+    + Select(params string[] fields)
+    + From(params string[] tables)
+    + Where(string condition)
+    + Join(string joinClause)
+    + GroupBy(params string[] fields)
+    + Having(string condition)
+    + OrderBy(params string[] fields)
+    + Limit(int count)
+    + Build(): SQLQuery
+}
+
+abstract class SQLQueryBuilder {
+    - _query: SQLQuery
+    + Reset()
+    + Build(): SQLQuery
+    # Select(params string[] fields)
+    # From(params string[] tables)
+    # Where(string condition)
+    # Join(string joinClause)
+    # GroupBy(params string[] fields)
+    # Having(string condition)
+    # OrderBy(params string[] fields)
+    # Limit(int count)
+}
+
+class StandardSQLQueryBuilder {
+    + Select(params string[] fields)
+    + From(params string[] tables)
+    + Where(string condition)
+    + Join(string joinClause)
+    + GroupBy(params string[] fields)
+    + Having(string condition)
+    + OrderBy(params string[] fields)
+    + Limit(int count)
+}
+
+class MySQLQueryBuilder {
+    + LeftJoin(string table, string condition)
+    + RightJoin(string table, string condition)
+    + InnerJoin(string table, string condition)
+}
+
+class SQLQuery {
+    - _selectFields: List<string>
+    - _fromTables: List<string>
+    - _joinClauses: List<string>
+    - _groupByFields: List<string>
+    - _orderByFields: List<string>
+    - _whereClause: string?
+    - _havingClause: string?
+    - _limitClause: int?
+    - _isDistinct: bool
+    + IsQueryValid(): bool
+    + ToSQL(): string
+}
+
+class QueryDirector {
+    - _builder: ISQLQueryBuilder
+    + BuildUserListQuery(): SQLQuery
+}
+
+ISQLQueryBuilder <|.. SQLQueryBuilder
+SQLQueryBuilder <|-- StandardSQLQueryBuilder
+StandardSQLQueryBuilder <|-- MySQLQueryBuilder
+SQLQueryBuilder --> SQLQuery
+QueryDirector --> ISQLQueryBuilder
+@enduml

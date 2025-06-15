@@ -1,0 +1,45 @@
+@startuml
+package Models {
+    enum FormatType
+    enum ReportType
+}
+
+package Interfaces {
+    interface IReportFormatStrategy
+}
+
+package Services {
+    class ReportService
+    class RuntimeStrategyService
+
+    package Factories {
+        class FormatStrategyFactory
+    }
+    package ReportGenerators {
+        class SalesReportGenerator
+        class InventoryReportGenerator
+        class UserReportGenerator
+    }
+    package Templates {
+        abstract class ReportGenerator
+    }
+    package Strategies {
+        class HTMLFormatStrategy
+        class CSVFormatStrategy
+        class JSONFormatStrategy
+    }
+}
+
+ReportGenerator --> FormatType
+ReportGenerator --> IReportFormatStrategy
+FormatStrategyFactory --> IReportFormatStrategy
+FormatStrategyFactory --> FormatType
+SalesReportGenerator --> ReportGenerator
+InventoryReportGenerator --> ReportGenerator
+UserReportGenerator --> ReportGenerator
+ReportService --> ReportGenerator
+ReportService --> FormatStrategyFactory
+RuntimeStrategyService --> SalesReportGenerator
+RuntimeStrategyService --> CSVFormatStrategy
+RuntimeStrategyService --> HTMLFormatStrategy
+@enduml

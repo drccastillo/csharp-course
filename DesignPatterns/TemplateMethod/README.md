@@ -149,3 +149,31 @@ SalesHTML, SalesCSV, SalesJSON, InventoryHTML, InventoryCSV, InventoryJSON, etc.
 
 ### Good approach (strategy)
 
+## Summary
+
+This implementation refactors the initial code to use the Template Method for report workflows and Strategy for output formats. Enums `ReportType` and `FormatType` replace magic strings, factories centralize strategy creation, and services demonstrate templated workflows.
+
+## Discovered Tasks
+
+| Task                                                                                 | Type    | Resolution                                                                                       |
+|--------------------------------------------------------------------------------------|---------|--------------------------------------------------------------------------------------------------|
+| `// TODO: Convert into enum` in ReportGenerator.cs                                     | TODO    | Introduced `ReportType` enum and updated signature of `GetReportType`.                            |
+| `// NOTE: LSP being broken` in ReportGenerator.cs                                      | NOTE    | Removed the commented code addressing LSP violation; no longer needed after refactoring.           |
+| `// TODO: Change to enum` in IReportFormatStrategy.cs                                  | TODO    | Updated `IReportFormatStrategy` to use `FormatType` enum.                                        |
+| `// TODO: Implement the missing format (json)` in FormatStrategyFactory.cs             | TODO    | Added `JSONFormatStrategy` for `FormatType.Json`.                                                |
+| `// TODO: Find a cleaner way to do this` in FormatStrategyFactory.cs                   | TODO    | Refactored `GetAvailableFormats` to return `Enum.GetValues<FormatType>().ToList()`.                |
+| `// TODO: This should be an enum 'format'` in ReportService.cs                         | TODO    | Changed `GenerateAllReportsInFormat` to accept `FormatType` instead of a string.                  |
+
+## Design Decisions and Patterns Used
+
+- **Template Method Pattern**: Encapsulates the workflow in `ReportGenerator` base class with overridable steps.
+- **Strategy Pattern**: `IReportFormatStrategy` allows selecting output formats (HTML, CSV, JSON) at runtime.
+- **Factory Pattern**: `FormatStrategyFactory` centralizes creation of format strategies.
+- **Enums over Magic Strings**: Replaced raw string identifiers with `ReportType` and `FormatType` enums.
+- **Clean Architecture**: Separation into Models, Interfaces, Services, Utils.
+- **SOLID Principles**: SRP (each class fulfils one responsibility), OCP (new formats added via strategies), DIP (depend on abstractions).
+
+## UML Class Diagram
+
+See [`uml/diagram.puml`](uml/diagram.puml) for the PlantUML diagram of classes and interfaces.
+

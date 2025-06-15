@@ -1,51 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-using CoffeeShop.Builder;
-using CoffeeShop.Components;
-using CoffeeShop.Decorator;
 using CoffeeShop.Interfaces;
-using CoffeeShop.Services;
+using CoffeeShop.Models.Components;
+using CoffeeShop.Services.Builder;
+using CoffeeShop.Services.Decorator;
+using CoffeeShop.Services.Facade;
 
-var coffeeShop = new CoffeeShopServiceFacade();
-coffeeShop.ShowMenu();
+// Demonstration of Decorator and Facade patterns
+var facade = new CoffeeShopServiceFacade();
+facade.ShowMenu();
 
-ICoffee coffe1 = new Espresso();
-coffe1 = new MilkDecorator(coffe1, "Regular");
-coffe1 = new SugarDecorator(coffe1, 2, "Brown");
+var customCoffee = facade.CreateCustomCoffee("Americano");
+var order = new CoffeeOrderBuilder(customCoffee)
+    .WithSize("Large")
+    .WithMilk("Soy")
+    .WithSugar(2, "Brown")
+    .Build();
 
-var result1 = coffe1.GetDescription();
-Console.WriteLine(result1);
-
-// coffeShop.PrintReceipt(coffe1, "Alberth");
-
-// Builder reduced version
-
-var coffe2 = new CoffeeOrderBuilder(coffeeShop.CreateCustomCoffee("Americano"))
-  .WithMilk()
-  //.WithSugar(packets: 3)
-  .Build();
-
-var result2 = coffe2.GetDescription();
-
-// ====== We are precessing other things ======
-coffe2 = new SugarDecorator(coffe2, 2, "White");
-
-Console.WriteLine(result2);
-
-/*
-BENEFITS OF DECORATOR PATTERN:
-1. SINGLE RESPONSIBILITY PRINCIPLE:
-  - Each decorator adds one and only one specific functionality.
-  - Base coffee class focus only on core coffee properties.
-
-2. OPEN/CLOSED PRINCIPLE:
-  - Open for extension it is easy to add new decorators
-  - It is easy to add new component (coffee types)
-  - Closed for modification so, existing code doesn't change unless the bussiness rules change.
-
-3. BONUS:
-  - We introduce an easy way to enable the creation of an object to be dynamic.
-
-BENEFITS OF FACADE PATTERN:
-1. SINGLE RESPONSIBILITY PRINCIPLE:
-  - The behavior that might be complex is enclosed in a single class
-*/
+facade.PrintReceipt(order);

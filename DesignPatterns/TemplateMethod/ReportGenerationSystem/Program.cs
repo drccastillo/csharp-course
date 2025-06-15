@@ -1,5 +1,6 @@
-﻿using ReportGenerationSystem.Services;
+using ReportGenerationSystem.Models;
+using ReportGenerationSystem.Services;
 
 var reportService = new ReportService();
 reportService.GenerateAllReports();
-reportService.GenerateAllReportsInFormat("CSV");
+reportService.GenerateAllReportsInFormat(FormatType.Csv);

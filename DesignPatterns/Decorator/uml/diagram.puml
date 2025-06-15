@@ -1,0 +1,51 @@
+@startuml
+package Models {
+    package Components {
+        class BaseCoffee
+        class Espresso
+        class Americano
+        class Cappuccino
+        class Latte
+        class Mocha
+    }
+    class Ingredient
+}
+
+package Interfaces {
+    interface ICoffee
+}
+
+package Services {
+    package Decorator {
+        abstract class CoffeeDecorator
+        class MilkDecorator
+        class SugarDecorator
+        class SizeDecorator
+    }
+    package Builder {
+        class CoffeeOrderBuilder
+    }
+    package Facade {
+        class CoffeeShopServiceFacade
+    }
+}
+
+ICoffee <|-- BaseCoffee
+BaseCoffee <|-- Espresso
+BaseCoffee <|-- Americano
+BaseCoffee <|-- Cappuccino
+BaseCoffee <|-- Latte
+BaseCoffee <|-- Mocha
+
+ICoffee <|.. CoffeeDecorator
+CoffeeDecorator <|-- MilkDecorator
+CoffeeDecorator <|-- SugarDecorator
+CoffeeDecorator <|-- SizeDecorator
+
+CoffeeOrderBuilder --> ICoffee
+CoffeeShopServiceFacade ..> ICoffee
+CoffeeShopServiceFacade ..> CoffeeOrderBuilder
+CoffeeShopServiceFacade ..> MilkDecorator
+CoffeeShopServiceFacade ..> SizeDecorator
+CoffeeShopServiceFacade ..> SugarDecorator
+@enduml
